@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: Forms and Input - HTML Course</title>
+    <meta name="description" content="Master HTML forms, input elements, validation, and user interaction for collecting data effectively.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/lesson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="container">
+            <nav class="lesson-nav">
+                <a href="../index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    Back to Course
+                </a>
+                <div class="lesson-info">
+                    <span class="lesson-number">07</span>
+                    <h1 class="lesson-title">Forms and Input</h1>
+                </div>
+                <div class="lesson-actions">
+                    <button class="btn btn-outline btn-sm" onclick="toggleNotes()">📝 Notes</button>
+                    <button class="btn btn-primary btn-sm" onclick="markComplete()">✓ Complete</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <div class="container">
+            <div class="lesson-layout">
+                <aside class="lesson-sidebar">
+                    <div class="sidebar-content">
+                        <h3>Contents</h3>
+                        <nav class="lesson-toc">
+                            <a href="#forms-basics" class="toc-link">Form Basics</a>
+                            <a href="#input-types" class="toc-link">Input Types</a>
+                            <a href="#form-elements" class="toc-link">Form Elements</a>
+                            <a href="#validation" class="toc-link">Validation</a>
+                            <a href="#accessibility" class="toc-link">Accessibility</a>
+                            <a href="#exercises" class="toc-link">Practice Exercises</a>
+                            <a href="#summary" class="toc-link">Summary</a>
+                        </nav>
+                        
+                        <div class="lesson-progress">
+                            <h4>Lesson Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="lesson-progress"></div>
+                            </div>
+                            <span class="progress-text" id="progress-text">0% Complete</span>
+                        </div>
+                        
+                        <div class="lesson-navigation">
+                            <a href="lesson06.html" class="nav-btn prev-lesson">← Previous Lesson</a>
+                            <a href="lesson08.html" class="nav-btn next-lesson">Next Lesson →</a>
+                        </div>
+                    </div>
+                </aside>
+
+                <article class="lesson-main">
+                    <section class="lesson-section" id="introduction">
+                        <div class="section-header">
+                            <h2>Creating Interactive Forms</h2>
+                            <span class="section-duration">⏱️ 35 minutes</span>
+                        </div>
+                        
+                        <p class="lead">
+                            Forms are the primary way users interact with websites. Learn to create effective, 
+                            accessible forms that collect user data safely and provide great user experience.
+                        </p>
+                        
+                        <div class="learning-objectives">
+                            <h3>🎯 Learning Objectives</h3>
+                            <ul>
+                                <li>Create HTML forms with proper structure</li>
+                                <li>Use different input types for various data</li>
+                                <li>Implement form validation and user feedback</li>
+                                <li>Build accessible forms with labels and descriptions</li>
+                                <li>Organize form elements logically</li>
+                                <li>Handle form submission and data processing</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="forms-basics">
+                        <h2>Form Fundamentals</h2>
+                        
+                        <div class="concept-box">
+                            <h3>💡 The Form Element</h3>
+                            <p>
+                                The <code>&lt;form&gt;</code> element wraps all form controls and defines how 
+                                data should be submitted to the server. It acts as a container for user input elements.
+                            </p>
+                        </div>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Basic Form Structure</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Full Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Form Attributes</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>action</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Submission URL</h4>
+                                    <p>Where form data is sent when submitted</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>method</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>HTTP Method</h4>
+                                    <p>GET (url parameters) or POST (request body)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>enctype</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Encoding Type</h4>
+                                    <p>How form data is encoded (needed for file uploads)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="input-types">
+                        <h2>Input Types</h2>
+                        
+                        <p>HTML5 introduced many new input types that provide better user experience and built-in validation.</p>
+                        
+                        <div class="code-playground">
+                            <div class="playground-header">
+                                <h3>Interactive Form Demo</h3>
+                                <div class="playground-tabs">
+                                    <button class="tab-btn active" data-tab="html">HTML</button>
+                                    <button class="tab-btn" data-tab="preview">Preview</button>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-content">
+                                <div class="tab-content active" id="html-tab">
+                                    <textarea id="html-editor" class="code-editor" title="HTML Editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;HTML Forms Demo&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 20px 0;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #34495e;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        input:invalid {
+            border-color: #e74c3c;
+        }
+        input:valid {
+            border-color: #2ecc71;
+        }
+        button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .checkbox-item, .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .checkbox-item input, .radio-item input {
+            width: auto;
+            margin: 0;
+        }
+        fieldset {
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        legend {
+            font-weight: 600;
+            color: #2c3e50;
+            padding: 0 10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="form-container"&gt;
+        &lt;h1&gt;📝 Comprehensive Form Demo&lt;/h1&gt;
+        
+        &lt;form action="#" method="post" novalidate&gt;
+            &lt;!-- Personal Information --&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;👤 Personal Information&lt;/legend&gt;
+                
+                &lt;div class="input-grid"&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="firstName"&gt;First Name *&lt;/label&gt;
+                        &lt;input type="text" id="firstName" name="firstName" required 
+                               placeholder="Enter your first name"&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="lastName"&gt;Last Name *&lt;/label&gt;
+                        &lt;input type="text" id="lastName" name="lastName" required 
+                               placeholder="Enter your last name"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="input-grid"&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="email"&gt;Email Address *&lt;/label&gt;
+                        &lt;input type="email" id="email" name="email" required 
+                               placeholder="your.email@example.com"&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="phone"&gt;Phone Number&lt;/label&gt;
+                        &lt;input type="tel" id="phone" name="phone" 
+                               placeholder="(123) 456-7890"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="input-grid"&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="birthdate"&gt;Date of Birth&lt;/label&gt;
+                        &lt;input type="date" id="birthdate" name="birthdate"&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="website"&gt;Personal Website&lt;/label&gt;
+                        &lt;input type="url" id="website" name="website" 
+                               placeholder="https://yourwebsite.com"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+            
+            &lt;!-- Preferences --&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;⚙️ Preferences&lt;/legend&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="country"&gt;Country&lt;/label&gt;
+                    &lt;select id="country" name="country"&gt;
+                        &lt;option value=""&gt;Select your country&lt;/option&gt;
+                        &lt;option value="us"&gt;United States&lt;/option&gt;
+                        &lt;option value="ca"&gt;Canada&lt;/option&gt;
+                        &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+                        &lt;option value="au"&gt;Australia&lt;/option&gt;
+                        &lt;option value="other"&gt;Other&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label&gt;Preferred Contact Method:&lt;/label&gt;
+                    &lt;div class="radio-group"&gt;
+                        &lt;div class="radio-item"&gt;
+                            &lt;input type="radio" id="contactEmail" name="contact" value="email" checked&gt;
+                            &lt;label for="contactEmail"&gt;Email&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class="radio-item"&gt;
+                            &lt;input type="radio" id="contactPhone" name="contact" value="phone"&gt;
+                            &lt;label for="contactPhone"&gt;Phone&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class="radio-item"&gt;
+                            &lt;input type="radio" id="contactMail" name="contact" value="mail"&gt;
+                            &lt;label for="contactMail"&gt;Mail&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label&gt;Interests (select all that apply):&lt;/label&gt;
+                    &lt;div class="checkbox-group"&gt;
+                        &lt;div class="checkbox-item"&gt;
+                            &lt;input type="checkbox" id="tech" name="interests" value="technology"&gt;
+                            &lt;label for="tech"&gt;Technology&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class="checkbox-item"&gt;
+                            &lt;input type="checkbox" id="sports" name="interests" value="sports"&gt;
+                            &lt;label for="sports"&gt;Sports&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class="checkbox-item"&gt;
+                            &lt;input type="checkbox" id="music" name="interests" value="music"&gt;
+                            &lt;label for="music"&gt;Music&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class="checkbox-item"&gt;
+                            &lt;input type="checkbox" id="travel" name="interests" value="travel"&gt;
+                            &lt;label for="travel"&gt;Travel&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+            
+            &lt;!-- Additional Information --&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;💬 Additional Information&lt;/legend&gt;
+                
+                &lt;div class="input-grid"&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="experience"&gt;Years of Experience&lt;/label&gt;
+                        &lt;input type="number" id="experience" name="experience" 
+                               min="0" max="50" step="1"&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="salary"&gt;Desired Salary Range&lt;/label&gt;
+                        &lt;input type="range" id="salary" name="salary" 
+                               min="30000" max="200000" step="5000" value="60000"
+                               oninput="document.getElementById('salaryValue').textContent = '$' + this.value"&gt;
+                        &lt;small&gt;Value: &lt;span id="salaryValue"&gt;$60000&lt;/span&gt;&lt;/small&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="portfolio"&gt;Upload Portfolio (PDF only)&lt;/label&gt;
+                    &lt;input type="file" id="portfolio" name="portfolio" accept=".pdf"&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="comments"&gt;Additional Comments&lt;/label&gt;
+                    &lt;textarea id="comments" name="comments" rows="4" 
+                              placeholder="Tell us more about yourself..."&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+            
+            &lt;div class="form-group"&gt;
+                &lt;div class="checkbox-item"&gt;
+                    &lt;input type="checkbox" id="newsletter" name="newsletter" value="yes"&gt;
+                    &lt;label for="newsletter"&gt;Subscribe to our newsletter&lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="form-group"&gt;
+                &lt;div class="checkbox-item"&gt;
+                    &lt;input type="checkbox" id="terms" name="terms" required&gt;
+                    &lt;label for="terms"&gt;I agree to the terms and conditions *&lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div style="text-align: center; margin-top: 30px;"&gt;
+                &lt;button type="submit"&gt;🚀 Submit Application&lt;/button&gt;
+                &lt;button type="reset" style="margin-left: 10px; background: #95a5a6;"&gt;🔄 Reset Form&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        // Simple form validation feedback
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted successfully! (This is just a demo)');
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                                </div>
+                                
+                                <div class="tab-content" id="preview-tab">
+                                    <iframe id="preview-frame" class="preview-frame" title="Forms Preview"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-actions">
+                                <button class="btn btn-primary" onclick="updatePreview()">Update Preview</button>
+                                <button class="btn btn-outline" onclick="resetCode()">Reset Code</button>
+                            </div>
+                        </div>
+                        
+                        <h3>Common Input Types</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>📝 Text Inputs</h4>
+                                <ul>
+                                    <li><strong>text</strong> - Basic text input</li>
+                                    <li><strong>email</strong> - Email validation</li>
+                                    <li><strong>password</strong> - Hidden characters</li>
+                                    <li><strong>search</strong> - Search box styling</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🔢 Number Inputs</h4>
+                                <ul>
+                                    <li><strong>number</strong> - Numeric input with controls</li>
+                                    <li><strong>range</strong> - Slider for ranges</li>
+                                    <li><strong>tel</strong> - Phone number input</li>
+                                    <li><strong>url</strong> - Website URL validation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>📅 Date/Time Inputs</h4>
+                                <ul>
+                                    <li><strong>date</strong> - Date picker</li>
+                                    <li><strong>time</strong> - Time picker</li>
+                                    <li><strong>datetime-local</strong> - Date and time</li>
+                                    <li><strong>week</strong> - Week selector</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🎛️ Choice Inputs</h4>
+                                <ul>
+                                    <li><strong>checkbox</strong> - Multiple selections</li>
+                                    <li><strong>radio</strong> - Single selection from group</li>
+                                    <li><strong>file</strong> - File upload</li>
+                                    <li><strong>color</strong> - Color picker</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="form-elements">
+                        <h2>Other Form Elements</h2>
+                        
+                        <h3>Labels and Accessibility</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Proper Label Association</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Method 1: Using 'for' attribute --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;
+
+&lt;!-- Method 2: Wrapping the input --&gt;
+&lt;label&gt;
+    Email Address:
+    &lt;input type="email" name="email"&gt;
+&lt;/label&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Select Dropdowns</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Select Elements</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;label for="country"&gt;Country:&lt;/label&gt;
+&lt;select id="country" name="country"&gt;
+    &lt;option value=""&gt;Select a country&lt;/option&gt;
+    &lt;option value="us"&gt;United States&lt;/option&gt;
+    &lt;option value="ca"&gt;Canada&lt;/option&gt;
+    &lt;option value="uk" selected&gt;United Kingdom&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Grouped options --&gt;
+&lt;select name="food"&gt;
+    &lt;optgroup label="Fruits"&gt;
+        &lt;option value="apple"&gt;Apple&lt;/option&gt;
+        &lt;option value="banana"&gt;Banana&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label="Vegetables"&gt;
+        &lt;option value="carrot"&gt;Carrot&lt;/option&gt;
+        &lt;option value="broccoli"&gt;Broccoli&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Textarea and Fieldset</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Textarea and Fieldset</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Multi-line text input --&gt;
+&lt;label for="message"&gt;Message:&lt;/label&gt;
+&lt;textarea id="message" name="message" rows="4" cols="50"
+          placeholder="Enter your message here..."&gt;&lt;/textarea&gt;
+
+&lt;!-- Grouping related fields --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Personal Information&lt;/legend&gt;
+    
+    &lt;label for="fname"&gt;First Name:&lt;/label&gt;
+    &lt;input type="text" id="fname" name="fname"&gt;
+    
+    &lt;label for="lname"&gt;Last Name:&lt;/label&gt;
+    &lt;input type="text" id="lname" name="lname"&gt;
+&lt;/fieldset&gt;</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="validation">
+                        <h2>Form Validation</h2>
+                        
+                        <h3>HTML5 Validation Attributes</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Built-in Validation</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Required field --&gt;
+&lt;input type="text" name="name" required&gt;
+
+&lt;!-- Minimum and maximum length --&gt;
+&lt;input type="password" name="password" minlength="8" maxlength="20"&gt;
+
+&lt;!-- Number range --&gt;
+&lt;input type="number" name="age" min="18" max="100"&gt;
+
+&lt;!-- Pattern matching --&gt;
+&lt;input type="text" name="zip" pattern="[0-9]{5}" 
+       title="Please enter a 5-digit ZIP code"&gt;
+
+&lt;!-- Custom validation message --&gt;
+&lt;input type="email" name="email" required 
+       oninvalid="this.setCustomValidity('Please enter a valid email address')"
+       oninput="this.setCustomValidity('')"&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Input Attributes for Better UX</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>placeholder</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Hint Text</h4>
+                                    <p>Shows example or instructions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>autocomplete</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Auto-fill</h4>
+                                    <p>Helps browsers suggest values</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>readonly</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Read Only</h4>
+                                    <p>Prevents user editing</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>disabled</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Disabled State</h4>
+                                    <p>Prevents interaction entirely</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="accessibility">
+                        <h2>Form Accessibility</h2>
+                        
+                        <h3>Essential Accessibility Features</h3>
+                        <div class="info-box">
+                            <h3>♿ Accessibility Checklist</h3>
+                            <ul>
+                                <li><strong>Labels:</strong> Every input needs a clear, descriptive label</li>
+                                <li><strong>Focus management:</strong> Logical tab order and visible focus indicators</li>
+                                <li><strong>Error messages:</strong> Clear, specific validation feedback</li>
+                                <li><strong>Instructions:</strong> Provide context and requirements</li>
+                                <li><strong>Grouping:</strong> Use fieldset and legend for related fields</li>
+                                <li><strong>Keyboard navigation:</strong> All controls accessible via keyboard</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Accessible Form Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;form&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Contact Information&lt;/legend&gt;
+        
+        &lt;div class="form-group"&gt;
+            &lt;label for="email"&gt;Email Address (required)&lt;/label&gt;
+            &lt;input type="email" id="email" name="email" required
+                   aria-describedby="email-help email-error"&gt;
+            &lt;div id="email-help" class="help-text"&gt;
+                We'll never share your email with anyone else.
+            &lt;/div&gt;
+            &lt;div id="email-error" class="error-message" role="alert"&gt;
+                &lt;!-- Error message will appear here --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="exercises">
+                        <h2>Practice Exercises</h2>
+                        
+                        <div class="exercises-grid">
+                            <div class="exercise-card">
+                                <h3>Exercise 1: Registration Form</h3>
+                                <p>Create a user registration form with:</p>
+                                <ul>
+                                    <li>Personal info fields with validation</li>
+                                    <li>Password confirmation</li>
+                                    <li>Terms and conditions checkbox</li>
+                                    <li>Proper labels and accessibility</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(1)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 2: Survey Form</h3>
+                                <p>Build a customer satisfaction survey:</p>
+                                <ul>
+                                    <li>Rating scales and multiple choice</li>
+                                    <li>File upload for feedback</li>
+                                    <li>Conditional fields based on responses</li>
+                                    <li>Progress indicators</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(2)">Show Solution</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="summary">
+                        <h2>Lesson Summary</h2>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>🎯 What You Learned</h3>
+                                <ul>
+                                    <li>Form elements collect and submit user data</li>
+                                    <li>HTML5 input types provide validation and better UX</li>
+                                    <li>Labels and fieldsets improve accessibility</li>
+                                    <li>Validation helps ensure data quality</li>
+                                    <li>Good forms are intuitive and forgiving</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>🏗️ Form Structure</h3>
+                                <dl>
+                                    <dt>&lt;form&gt;</dt>
+                                    <dd>Container for all form controls</dd>
+                                    
+                                    <dt>&lt;input&gt;</dt>
+                                    <dd>Various input types for data collection</dd>
+                                    
+                                    <dt>&lt;label&gt;</dt>
+                                    <dd>Describes the purpose of form controls</dd>
+                                    
+                                    <dt>&lt;fieldset&gt;</dt>
+                                    <dd>Groups related form fields</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>✨ Best Practices</h3>
+                                <ul>
+                                    <li>Always use labels for form controls</li>
+                                    <li>Provide clear validation feedback</li>
+                                    <li>Group related fields logically</li>
+                                    <li>Use appropriate input types</li>
+                                    <li>Test keyboard accessibility</li>
+                                    <li>Make error messages helpful</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-completion">
+                            <div class="completion-message">
+                                <h3>🎉 Form Master!</h3>
+                                <p>You can now create professional, accessible forms that provide excellent user experience and collect data effectively!</p>
+                            </div>
+                            
+                            <div class="completion-actions">
+                                <button class="btn btn-primary btn-large" onclick="markLessonComplete()">
+                                    ✓ Mark Lesson Complete
+                                </button>
+                                <a href="lesson08.html" class="btn btn-outline btn-large">
+                                    Next: Semantic Elements →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div id="notes-panel" class="notes-panel">
+        <div class="notes-header">
+            <h3>📝 My Notes</h3>
+            <button class="close-btn" onclick="toggleNotes()">&times;</button>
+        </div>
+        <div class="notes-content">
+            <textarea id="notes-textarea" placeholder="Take notes about HTML forms and input elements..."></textarea>
+        </div>
+        <div class="notes-footer">
+            <button class="btn btn-sm btn-outline" onclick="clearNotes()">Clear</button>
+            <button class="btn btn-sm btn-primary" onclick="saveNotes()">Save</button>
+        </div>
+    </div>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        let currentProgress = 0;
+        let totalSections = 7;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLesson();
+            initializeCodeEditor();
+            loadNotes();
+            trackProgress();
+        });
+        
+        function initializeLesson() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        updateActiveTocLink(id);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function updateActiveTocLink(activeId) {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        function initializeCodeEditor() {
+            const textarea = document.getElementById('html-editor');
+            if (!textarea) return;
+            
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: 'htmlmixed',
+                theme: 'default',
+                lineNumbers: true,
+                autoCloseTags: true,
+                autoCloseBrackets: true,
+                indentUnit: 2,
+                tabSize: 2,
+                lineWrapping: true
+            });
+            
+            editor.on('change', function() {
+                updatePreview();
+            });
+            
+            window.htmlEditor = editor;
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            if (!window.htmlEditor) return;
+            
+            const code = window.htmlEditor.getValue();
+            const previewFrame = document.getElementById('preview-frame');
+            if (!previewFrame) return;
+            
+            const blob = new Blob([code], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            previewFrame.src = url;
+        }
+        
+        function resetCode() {
+            const defaultCode = document.getElementById('html-editor').defaultValue;
+            if (window.htmlEditor) {
+                window.htmlEditor.setValue(defaultCode);
+                updatePreview();
+            }
+        }
+        
+        function trackProgress() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const progressFill = document.getElementById('lesson-progress');
+            const progressText = document.getElementById('progress-text');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        currentProgress++;
+                        const percentage = Math.min((currentProgress / totalSections) * 100, 100);
+                        progressFill.style.width = percentage + '%';
+                        progressText.textContent = Math.round(percentage) + '% Complete';
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+        }
+        
+        function saveNotes() {
+            const notes = document.getElementById('notes-textarea').value;
+            localStorage.setItem('lesson7-notes', notes);
+            showNotification('Notes saved!');
+        }
+        
+        function loadNotes() {
+            const savedNotes = localStorage.getItem('lesson7-notes');
+            if (savedNotes) {
+                document.getElementById('notes-textarea').value = savedNotes;
+            }
+        }
+        
+        function clearNotes() {
+            document.getElementById('notes-textarea').value = '';
+            localStorage.removeItem('lesson7-notes');
+            showNotification('Notes cleared!');
+        }
+        
+        function markComplete() {
+            if (window.HTMLCourse) {
+                window.HTMLCourse.markLessonComplete(7);
+            }
+            showNotification('Lesson 7 completed! 🎉');
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        function copyCode(button) {
+            const codeBlock = button.parentNode.nextElementSibling.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+        
+        function showExerciseSolution(exerciseNumber) {
+            alert(`Exercise ${exerciseNumber} solution would be shown here in a complete implementation.`);
+        }
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab-btn')) {
+                const tabId = e.target.getAttribute('data-tab');
+                const tabs = e.target.parentNode.querySelectorAll('.tab-btn');
+                const contents = e.target.closest('.code-playground').querySelectorAll('.tab-content');
+                
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                
+                e.target.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

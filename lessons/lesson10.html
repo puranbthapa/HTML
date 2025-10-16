@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 10: Advanced Audio & Video - HTML Course</title>
+    <meta name="description" content="Master advanced HTML5 audio and video features, streaming, accessibility, and modern multimedia integration.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/lesson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="container">
+            <nav class="lesson-nav">
+                <a href="../index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    Back to Course
+                </a>
+                <div class="lesson-info">
+                    <span class="lesson-number">10</span>
+                    <h1 class="lesson-title">Advanced Audio & Video</h1>
+                </div>
+                <div class="lesson-actions">
+                    <button class="btn btn-outline btn-sm" onclick="toggleNotes()">📝 Notes</button>
+                    <button class="btn btn-primary btn-sm" onclick="markComplete()">✓ Complete</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <div class="container">
+            <div class="lesson-layout">
+                <aside class="lesson-sidebar">
+                    <div class="sidebar-content">
+                        <h3>Contents</h3>
+                        <nav class="lesson-toc">
+                            <a href="#multimedia-overview" class="toc-link">Multimedia Overview</a>
+                            <a href="#advanced-video" class="toc-link">Advanced Video</a>
+                            <a href="#advanced-audio" class="toc-link">Advanced Audio</a>
+                            <a href="#streaming" class="toc-link">Streaming Media</a>
+                            <a href="#accessibility" class="toc-link">Media Accessibility</a>
+                            <a href="#exercises" class="toc-link">Practice Exercises</a>
+                            <a href="#summary" class="toc-link">Summary</a>
+                        </nav>
+                        
+                        <div class="lesson-progress">
+                            <h4>Lesson Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="lesson-progress"></div>
+                            </div>
+                            <span class="progress-text" id="progress-text">0% Complete</span>
+                        </div>
+                        
+                        <div class="lesson-navigation">
+                            <a href="lesson09.html" class="nav-btn prev-lesson">← Previous Lesson</a>
+                            <div class="nav-btn completion">🎉 Course Complete!</div>
+                        </div>
+                    </div>
+                </aside>
+
+                <article class="lesson-main">
+                    <section class="lesson-section" id="introduction">
+                        <div class="section-header">
+                            <h2>Advanced Multimedia Integration</h2>
+                            <span class="section-duration">⏱️ 35 minutes</span>
+                        </div>
+                        
+                        <p class="lead">
+                            Master advanced HTML5 multimedia features including streaming, custom controls, 
+                            accessibility, and modern video/audio APIs. Create professional media experiences 
+                            that work seamlessly across all devices and platforms.
+                        </p>
+                        
+                        <div class="learning-objectives">
+                            <h3>🎯 Learning Objectives</h3>
+                            <ul>
+                                <li>Implement advanced video and audio controls</li>
+                                <li>Create custom media players with JavaScript</li>
+                                <li>Handle streaming and adaptive media content</li>
+                                <li>Ensure comprehensive media accessibility</li>
+                                <li>Optimize media performance and delivery</li>
+                                <li>Build responsive multimedia experiences</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="multimedia-overview">
+                        <h2>Modern Multimedia Landscape</h2>
+                        
+                        <div class="concept-box">
+                            <h3>💡 Evolution of Web Media</h3>
+                            <p>
+                                HTML5 revolutionized web multimedia by eliminating the need for plugins like 
+                                Flash. Today's web supports high-quality video, spatial audio, live streaming, 
+                                and interactive media experiences natively in browsers.
+                            </p>
+                        </div>
+                        
+                        <h3>Modern Media Capabilities</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>🎥 Video Features</h4>
+                                <ul>
+                                    <li>4K and HDR video support</li>
+                                    <li>Adaptive bitrate streaming</li>
+                                    <li>Picture-in-picture mode</li>
+                                    <li>360° and VR video</li>
+                                    <li>Live streaming capabilities</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🔊 Audio Enhancements</h4>
+                                <ul>
+                                    <li>Spatial and surround sound</li>
+                                    <li>Low-latency audio streaming</li>
+                                    <li>Web Audio API integration</li>
+                                    <li>Real-time audio processing</li>
+                                    <li>Background audio playback</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>📱 Mobile Optimization</h4>
+                                <ul>
+                                    <li>Touch-friendly controls</li>
+                                    <li>Bandwidth-aware delivery</li>
+                                    <li>Battery optimization</li>
+                                    <li>Offline media caching</li>
+                                    <li>Native fullscreen support</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>♿ Accessibility</h4>
+                                <ul>
+                                    <li>Closed captions and subtitles</li>
+                                    <li>Audio descriptions</li>
+                                    <li>Keyboard navigation</li>
+                                    <li>Screen reader compatibility</li>
+                                    <li>Sign language interpretation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="advanced-video">
+                        <h2>Advanced Video Implementation</h2>
+                        
+                        <div class="code-playground">
+                            <div class="playground-header">
+                                <h3>Custom Video Player</h3>
+                                <div class="playground-tabs">
+                                    <button class="tab-btn active" data-tab="html">HTML</button>
+                                    <button class="tab-btn" data-tab="preview">Preview</button>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-content">
+                                <div class="tab-content active" id="html-tab">
+                                    <textarea id="html-editor" class="code-editor" title="HTML Editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Advanced Media Player&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .media-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #fff, #a8edea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .video-player {
+            position: relative;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .custom-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .video-player:hover .custom-controls {
+            transform: translateY(0);
+        }
+
+        .controls-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .control-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .control-btn:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.1);
+        }
+
+        .progress-container {
+            flex: 1;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
+            transition: width 0.1s ease;
+        }
+
+        .time-display {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.9);
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .volume-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .audio-player {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .waveform {
+            flex: 1;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .waveform-bars {
+            display: flex;
+            align-items: end;
+            height: 100%;
+            padding: 0 15px;
+            gap: 2px;
+        }
+
+        .bar {
+            background: linear-gradient(to top, #667eea, #764ba2);
+            width: 3px;
+            border-radius: 2px;
+            transition: height 0.3s ease;
+        }
+
+        .media-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .info-card h3 {
+            margin: 0 0 10px 0;
+            color: #a8edea;
+        }
+
+        .playlist {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .playlist-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .playlist-item.active {
+            background: rgba(102, 126, 234, 0.3);
+        }
+
+        .captions-container {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .controls-row {
+                flex-wrap: wrap;
+            }
+            
+            .volume-container {
+                order: 1;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="media-container"&gt;
+        &lt;h1&gt;🎬 Advanced Media Player&lt;/h1&gt;
+        
+        &lt;!-- Custom Video Player --&gt;
+        &lt;div class="video-player"&gt;
+            &lt;video id="mainVideo" poster="https://picsum.photos/800/450?random=1"&gt;
+                &lt;source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4"&gt;
+                &lt;track kind="captions" src="captions-en.vtt" srclang="en" label="English" default&gt;
+                &lt;p&gt;Your browser doesn't support HTML5 video. &lt;a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"&gt;Download the video&lt;/a&gt; instead.&lt;/p&gt;
+            &lt;/video&gt;
+            
+            &lt;div class="custom-controls"&gt;
+                &lt;div class="controls-row"&gt;
+                    &lt;button class="control-btn" id="playPauseBtn"&gt;▶️&lt;/button&gt;
+                    &lt;button class="control-btn" id="prevBtn"&gt;⏮️&lt;/button&gt;
+                    &lt;button class="control-btn" id="nextBtn"&gt;⏭️&lt;/button&gt;
+                    
+                    &lt;div class="progress-container" id="progressContainer"&gt;
+                        &lt;div class="progress-bar" id="progressBar"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="time-display" id="timeDisplay"&gt;0:00 / 0:00&lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="controls-row"&gt;
+                    &lt;button class="control-btn" id="muteBtn"&gt;🔊&lt;/button&gt;
+                    
+                    &lt;div class="volume-container"&gt;
+                        &lt;input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="1"&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;button class="control-btn" id="captionsBtn"&gt;💬&lt;/button&gt;
+                    &lt;button class="control-btn" id="speedBtn"&gt;1×&lt;/button&gt;
+                    &lt;button class="control-btn" id="fullscreenBtn"&gt;⛶&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Captions Display --&gt;
+        &lt;div id="captionsDisplay" class="captions-container" style="display: none;"&gt;
+            Captions will appear here...
+        &lt;/div&gt;
+
+        &lt;!-- Audio Player --&gt;
+        &lt;div class="audio-player"&gt;
+            &lt;h3&gt;🎵 Advanced Audio Player&lt;/h3&gt;
+            
+            &lt;audio id="audioPlayer" style="display: none;"&gt;
+                &lt;source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav"&gt;
+                &lt;source src="sample-audio.mp3" type="audio/mpeg"&gt;
+                &lt;p&gt;Your browser doesn't support HTML5 audio.&lt;/p&gt;
+            &lt;/audio&gt;
+            
+            &lt;div class="audio-controls"&gt;
+                &lt;button class="control-btn" id="audioPlayBtn"&gt;▶️&lt;/button&gt;
+                
+                &lt;div class="waveform" id="waveform"&gt;
+                    &lt;div class="waveform-bars"&gt;
+                        &lt;!-- Generated by JavaScript --&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="time-display" id="audioTimeDisplay"&gt;0:00&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Media Information --&gt;
+        &lt;div class="media-info"&gt;
+            &lt;div class="info-card"&gt;
+                &lt;h3&gt;📊 Video Stats&lt;/h3&gt;
+                &lt;p id="videoStats"&gt;Resolution: Loading...&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="info-card"&gt;
+                &lt;h3&gt;🌐 Network&lt;/h3&gt;
+                &lt;p id="networkStats"&gt;Buffered: 0%&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="info-card"&gt;
+                &lt;h3&gt;⚡ Performance&lt;/h3&gt;
+                &lt;p id="performanceStats"&gt;Smooth playback&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Playlist --&gt;
+        &lt;div class="playlist"&gt;
+            &lt;h3&gt;📋 Playlist&lt;/h3&gt;
+            
+            &lt;div class="playlist-item active" data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"&gt;
+                &lt;span&gt;🎬&lt;/span&gt;
+                &lt;div&gt;
+                    &lt;strong&gt;Big Buck Bunny&lt;/strong&gt;&lt;br&gt;
+                    &lt;small&gt;Sample Video • HD Quality&lt;/small&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="playlist-item" data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"&gt;
+                &lt;span&gt;🐘&lt;/span&gt;
+                &lt;div&gt;
+                    &lt;strong&gt;Elephants Dream&lt;/strong&gt;&lt;br&gt;
+                    &lt;small&gt;Sample Video • Full HD&lt;/small&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        // Get DOM elements
+        const video = document.getElementById('mainVideo');
+        const audio = document.getElementById('audioPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const audioPlayBtn = document.getElementById('audioPlayBtn');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const timeDisplay = document.getElementById('timeDisplay');
+        const audioTimeDisplay = document.getElementById('audioTimeDisplay');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const muteBtn = document.getElementById('muteBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const captionsBtn = document.getElementById('captionsBtn');
+        const speedBtn = document.getElementById('speedBtn');
+        const captionsDisplay = document.getElementById('captionsDisplay');
+        
+        let currentSpeed = 1;
+        const speeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
+        
+        // Video Controls
+        playPauseBtn.addEventListener('click', () =&gt; {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.textContent = '⏸️';
+            } else {
+                video.pause();
+                playPauseBtn.textContent = '▶️';
+            }
+        });
+        
+        // Progress bar
+        video.addEventListener('timeupdate', () =&gt; {
+            const progress = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = progress + '%';
+            
+            const current = formatTime(video.currentTime);
+            const duration = formatTime(video.duration);
+            timeDisplay.textContent = `${current} / ${duration}`;
+            
+            updateVideoStats();
+        });
+        
+        progressContainer.addEventListener('click', (e) =&gt; {
+            const rect = progressContainer.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            const newTime = (clickX / width) * video.duration;
+            video.currentTime = newTime;
+        });
+        
+        // Volume control
+        volumeSlider.addEventListener('input', (e) =&gt; {
+            video.volume = e.target.value;
+            audio.volume = e.target.value;
+            updateVolumeIcon();
+        });
+        
+        muteBtn.addEventListener('click', () =&gt; {
+            video.muted = !video.muted;
+            audio.muted = !audio.muted;
+            updateVolumeIcon();
+        });
+        
+        function updateVolumeIcon() {
+            if (video.muted || video.volume === 0) {
+                muteBtn.textContent = '🔇';
+            } else if (video.volume &lt; 0.5) {
+                muteBtn.textContent = '🔉';
+            } else {
+                muteBtn.textContent = '🔊';
+            }
+        }
+        
+        // Fullscreen
+        fullscreenBtn.addEventListener('click', () =&gt; {
+            if (!document.fullscreenElement) {
+                video.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        });
+        
+        // Speed control
+        speedBtn.addEventListener('click', () =&gt; {
+            const currentIndex = speeds.indexOf(currentSpeed);
+            const nextIndex = (currentIndex + 1) % speeds.length;
+            currentSpeed = speeds[nextIndex];
+            video.playbackRate = currentSpeed;
+            speedBtn.textContent = `${currentSpeed}×`;
+        });
+        
+        // Captions toggle
+        captionsBtn.addEventListener('click', () =&gt; {
+            const track = video.textTracks[0];
+            if (track) {
+                if (track.mode === 'showing') {
+                    track.mode = 'hidden';
+                    captionsDisplay.style.display = 'none';
+                    captionsBtn.style.opacity = '0.5';
+                } else {
+                    track.mode = 'showing';
+                    captionsDisplay.style.display = 'block';
+                    captionsBtn.style.opacity = '1';
+                }
+            }
+        });
+        
+        // Audio player controls
+        audioPlayBtn.addEventListener('click', () =&gt; {
+            if (audio.paused) {
+                audio.play();
+                audioPlayBtn.textContent = '⏸️';
+            } else {
+                audio.pause();
+                audioPlayBtn.textContent = '▶️';
+            }
+        });
+        
+        audio.addEventListener('timeupdate', () =&gt; {
+            const current = formatTime(audio.currentTime);
+            audioTimeDisplay.textContent = current;
+        });
+        
+        // Playlist functionality
+        document.querySelectorAll('.playlist-item').forEach(item =&gt; {
+            item.addEventListener('click', () =&gt; {
+                document.querySelectorAll('.playlist-item').forEach(i =&gt; i.classList.remove('active'));
+                item.classList.add('active');
+                
+                const newSrc = item.getAttribute('data-src');
+                video.src = newSrc;
+                video.load();
+            });
+        });
+        
+        // Utility functions
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+        
+        function updateVideoStats() {
+            if (video.videoWidth &amp;&amp; video.videoHeight) {
+                document.getElementById('videoStats').textContent = 
+                    `Resolution: ${video.videoWidth}×${video.videoHeight}`;
+            }
+            
+            if (video.buffered.length &gt; 0) {
+                const buffered = (video.buffered.end(0) / video.duration) * 100;
+                document.getElementById('networkStats').textContent = 
+                    `Buffered: ${Math.round(buffered)}%`;
+            }
+        }
+        
+        // Generate waveform bars
+        function generateWaveform() {
+            const waveform = document.querySelector('.waveform-bars');
+            const numBars = 50;
+            
+            for (let i = 0; i &lt; numBars; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                bar.style.height = Math.random() * 100 + '%';
+                waveform.appendChild(bar);
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () =&gt; {
+            generateWaveform();
+            updateVolumeIcon();
+        });
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) =&gt; {
+            if (e.target.tagName.toLowerCase() === 'input') return;
+            
+            switch(e.key) {
+                case ' ':
+                    e.preventDefault();
+                    playPauseBtn.click();
+                    break;
+                case 'f':
+                    fullscreenBtn.click();
+                    break;
+                case 'm':
+                    muteBtn.click();
+                    break;
+                case 'ArrowLeft':
+                    video.currentTime -= 10;
+                    break;
+                case 'ArrowRight':
+                    video.currentTime += 10;
+                    break;
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                                </div>
+                                
+                                <div class="tab-content" id="preview-tab">
+                                    <iframe id="preview-frame" class="preview-frame" title="Advanced Media Preview"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-actions">
+                                <button class="btn btn-primary" onclick="updatePreview()">Update Preview</button>
+                                <button class="btn btn-outline" onclick="resetCode()">Reset Code</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="advanced-audio">
+                        <h2>Advanced Audio Features</h2>
+                        
+                        <h3>Web Audio API Integration</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Web Audio API Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;script&gt;
+// Create audio context
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+// Audio processing chain
+function createAudioEffects(audio) {
+    const source = audioContext.createMediaElementSource(audio);
+    
+    // Create effects nodes
+    const gainNode = audioContext.createGain();
+    const filterNode = audioContext.createBiquadFilter();
+    const analyserNode = audioContext.createAnalyser();
+    
+    // Configure filter
+    filterNode.type = 'lowpass';
+    filterNode.frequency.value = 1000;
+    
+    // Connect audio chain
+    source.connect(filterNode);
+    filterNode.connect(gainNode);
+    gainNode.connect(analyserNode);
+    analyserNode.connect(audioContext.destination);
+    
+    return { source, gainNode, filterNode, analyserNode };
+}
+
+// Volume control with Web Audio API
+function setVolume(volume) {
+    if (gainNode) {
+        gainNode.gain.value = volume;
+    }
+}
+
+// Audio visualization
+function visualizeAudio(analyser) {
+    const canvas = document.getElementById('audioCanvas');
+    const ctx = canvas.getContext('2d');
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+    
+    function draw() {
+        analyser.getByteFrequencyData(dataArray);
+        
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        const barWidth = (canvas.width / bufferLength) * 2.5;
+        let x = 0;
+        
+        for (let i = 0; i < bufferLength; i++) {
+            const barHeight = dataArray[i] / 2;
+            
+            ctx.fillStyle = `rgb(${barHeight + 100}, 50, 50)`;
+            ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+            
+            x += barWidth + 1;
+        }
+        
+        requestAnimationFrame(draw);
+    }
+    
+    draw();
+}
+&lt;/script&gt;</code></pre>
+        </div>
+                        
+                        <h3>Spatial Audio</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">3D Audio Positioning</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;script&gt;
+// Create 3D audio context
+function create3DAudio() {
+    const audioContext = new AudioContext();
+    const listener = audioContext.listener;
+    
+    // Set listener position (user's position)
+    listener.positionX.value = 0;
+    listener.positionY.value = 0;
+    listener.positionZ.value = 0;
+    
+    // Set listener orientation
+    listener.forwardX.value = 0;
+    listener.forwardY.value = 0;
+    listener.forwardZ.value = -1;
+    listener.upX.value = 0;
+    listener.upY.value = 1;
+    listener.upZ.value = 0;
+    
+    return audioContext;
+}
+
+// Position audio source in 3D space
+function positionAudioSource(audioContext, audioElement, x, y, z) {
+    const source = audioContext.createMediaElementSource(audioElement);
+    const panner = audioContext.createPanner();
+    
+    // Configure 3D audio parameters
+    panner.panningModel = 'HRTF';
+    panner.distanceModel = 'inverse';
+    panner.refDistance = 1;
+    panner.maxDistance = 10000;
+    panner.rolloffFactor = 1;
+    panner.coneInnerAngle = 360;
+    panner.coneOuterAngle = 0;
+    panner.coneOuterGain = 0;
+    
+    // Set position
+    panner.positionX.value = x;
+    panner.positionY.value = y;
+    panner.positionZ.value = z;
+    
+    // Connect audio chain
+    source.connect(panner);
+    panner.connect(audioContext.destination);
+    
+    return { source, panner };
+}
+&lt;/script&gt;</code></pre>
+        </div>
+                    </section>
+
+                    <section class="lesson-section" id="streaming">
+                        <h2>Streaming and Performance</h2>
+                        
+                        <h3>Adaptive Streaming</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Multi-Quality Video Sources</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;video controls&gt;
+    &lt;!-- Multiple quality sources --&gt;
+    &lt;source src="video-4k.mp4" type="video/mp4" media="(min-width: 1920px)"&gt;
+    &lt;source src="video-1080p.mp4" type="video/mp4" media="(min-width: 1280px)"&gt;
+    &lt;source src="video-720p.mp4" type="video/mp4" media="(min-width: 720px)"&gt;
+    &lt;source src="video-480p.mp4" type="video/mp4"&gt;
+    
+    &lt;!-- Format fallbacks --&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    &lt;source src="video.ogv" type="video/ogg"&gt;
+&lt;/video&gt;
+
+&lt;script&gt;
+// Adaptive bitrate streaming simulation
+class AdaptiveStreaming {
+    constructor(video) {
+        this.video = video;
+        this.qualities = [
+            { resolution: '480p', bitrate: 500 },
+            { resolution: '720p', bitrate: 1500 },
+            { resolution: '1080p', bitrate: 3000 },
+            { resolution: '4K', bitrate: 8000 }
+        ];
+        this.currentQuality = 1;
+    }
+    
+    measureBandwidth() {
+        // Simulate bandwidth measurement
+        return new Promise((resolve) =&gt; {
+            setTimeout(() =&gt; {
+                const bandwidth = Math.random() * 10000 + 1000; // 1-11 Mbps
+                resolve(bandwidth);
+            }, 1000);
+        });
+    }
+    
+    async adaptQuality() {
+        const bandwidth = await this.measureBandwidth();
+        let optimalQuality = 0;
+        
+        for (let i = 0; i &lt; this.qualities.length; i++) {
+            if (bandwidth &gt; this.qualities[i].bitrate * 1.5) {
+                optimalQuality = i;
+            }
+        }
+        
+        if (optimalQuality !== this.currentQuality) {
+            this.switchQuality(optimalQuality);
+        }
+    }
+    
+    switchQuality(newQuality) {
+        const currentTime = this.video.currentTime;
+        const wasPlaying = !this.video.paused;
+        
+        // Switch to new quality source
+        // This would typically involve HLS or DASH streaming
+        console.log(`Switching from ${this.qualities[this.currentQuality].resolution} to ${this.qualities[newQuality].resolution}`);
+        
+        this.currentQuality = newQuality;
+        
+        // Restore playback position
+        this.video.currentTime = currentTime;
+        if (wasPlaying) {
+            this.video.play();
+        }
+    }
+}
+&lt;/script&gt;</code></pre>
+        </div>
+                        
+                        <h3>Performance Optimization</h3>
+                        <div class="info-box">
+                            <h3>⚡ Media Performance Tips</h3>
+                            <ul>
+                                <li><strong>Preload Strategy:</strong> Use preload="metadata" for faster initial loading</li>
+                                <li><strong>Lazy Loading:</strong> Load videos only when needed to save bandwidth</li>
+                                <li><strong>Compression:</strong> Use modern codecs (H.265, AV1) for better compression</li>
+                                <li><strong>CDN Delivery:</strong> Serve media from geographically distributed servers</li>
+                                <li><strong>Caching:</strong> Implement proper cache headers for media files</li>
+                                <li><strong>Progressive Enhancement:</strong> Provide fallbacks for older browsers</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="accessibility">
+                        <h2>Media Accessibility</h2>
+                        
+                        <h3>Comprehensive Accessibility Features</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Fully Accessible Video</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;video controls 
+       aria-label="Educational video about web development"
+       aria-describedby="video-description"&gt;
+    
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    
+    &lt;!-- Multiple caption tracks --&gt;
+    &lt;track kind="captions" src="captions-en.vtt" srclang="en" label="English" default&gt;
+    &lt;track kind="captions" src="captions-es.vtt" srclang="es" label="Español"&gt;
+    &lt;track kind="captions" src="captions-fr.vtt" srclang="fr" label="Français"&gt;
+    
+    &lt;!-- Audio descriptions --&gt;
+    &lt;track kind="descriptions" src="audio-descriptions.vtt" srclang="en" label="Audio Descriptions"&gt;
+    
+    &lt;!-- Chapter navigation --&gt;
+    &lt;track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters"&gt;
+    
+    &lt;!-- Fallback content --&gt;
+    &lt;p&gt;This video demonstrates web development concepts. 
+       &lt;a href="transcript.html"&gt;Read the full transcript&lt;/a&gt; or 
+       &lt;a href="video.mp4" download&gt;download the video&lt;/a&gt;.&lt;/p&gt;
+&lt;/video&gt;
+
+&lt;div id="video-description" class="sr-only"&gt;
+    A comprehensive tutorial covering HTML5 video implementation, 
+    including accessibility features and modern streaming techniques.
+&lt;/div&gt;
+
+&lt;!-- Accessible video controls --&gt;
+&lt;div class="accessible-controls" role="toolbar" aria-label="Video controls"&gt;
+    &lt;button id="playBtn" aria-label="Play video" aria-pressed="false"&gt;
+        &lt;span class="sr-only"&gt;Play&lt;/span&gt;
+        ▶️
+    &lt;/button&gt;
+    
+    &lt;button id="captionToggle" aria-label="Toggle captions" aria-pressed="false"&gt;
+        &lt;span class="sr-only"&gt;Captions&lt;/span&gt;
+        💬
+    &lt;/button&gt;
+    
+    &lt;div class="volume-control" role="slider" 
+         aria-label="Volume" 
+         aria-valuemin="0" 
+         aria-valuemax="100" 
+         aria-valuenow="100"&gt;
+        &lt;input type="range" min="0" max="100" value="100" 
+               aria-label="Volume control"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+                        
+                        <h3>WebVTT Caption Format</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Sample WebVTT File (captions.vtt)</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-vtt">WEBVTT
+
+NOTE
+This is a sample WebVTT file for video captions
+
+1
+00:00:00.000 --&gt; 00:00:05.000
+Welcome to our HTML5 video tutorial.
+
+2
+00:00:05.000 --&gt; 00:00:10.000
+Today we'll learn about advanced multimedia features.
+
+3
+00:00:10.000 --&gt; 00:00:15.000
+&lt;v Instructor&gt;Let's start with basic video implementation.
+
+4
+00:00:15.000 --&gt; 00:00:20.000 position:10% align:left size:35%
+You can position captions anywhere on screen.
+
+5
+00:00:20.000 --&gt; 00:00:25.000
+&lt;c.highlight&gt;This text is highlighted&lt;/c&gt; for emphasis.
+
+NOTE
+Chapter markers for navigation
+
+CHAPTER 1
+00:00:00.000 --&gt; 00:05:00.000
+Introduction
+
+CHAPTER 2
+00:05:00.000 --&gt; 00:10:00.000
+Basic Implementation
+
+CHAPTER 3
+00:10:00.000 --&gt; 00:15:00.000
+Advanced Features</code></pre>
+        </div>
+                    </section>
+
+                    <section class="lesson-section" id="exercises">
+                        <h2>Practice Exercises</h2>
+                        
+                        <div class="exercises-grid">
+                            <div class="exercise-card">
+                                <h3>Exercise 1: Custom Media Player</h3>
+                                <p>Build a complete custom media player:</p>
+                                <ul>
+                                    <li>Custom controls with keyboard shortcuts</li>
+                                    <li>Playlist functionality with next/previous</li>
+                                    <li>Multiple caption languages</li>
+                                    <li>Volume visualization and audio effects</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(1)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 2: Streaming Platform</h3>
+                                <p>Create a mini streaming platform:</p>
+                                <ul>
+                                    <li>Video library with search and filtering</li>
+                                    <li>Adaptive quality switching</li>
+                                    <li>Progress tracking and bookmarks</li>
+                                    <li>Full accessibility compliance</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(2)">Show Solution</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="summary">
+                        <h2>Course Completion Summary</h2>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>🎯 Final Lesson Achievements</h3>
+                                <ul>
+                                    <li>Advanced multimedia controls and customization</li>
+                                    <li>Web Audio API for professional audio processing</li>
+                                    <li>Streaming optimization and performance</li>
+                                    <li>Comprehensive accessibility implementation</li>
+                                    <li>Modern media delivery techniques</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>🏆 Complete Course Mastery</h3>
+                                <dl>
+                                    <dt>Lessons 1-3</dt>
+                                    <dd>HTML fundamentals and text content</dd>
+                                    
+                                    <dt>Lessons 4-6</dt>
+                                    <dd>Navigation, media, and data organization</dd>
+                                    
+                                    <dt>Lessons 7-9</dt>
+                                    <dd>Interactivity, semantics, and modern features</dd>
+                                    
+                                    <dt>Lesson 10</dt>
+                                    <dd>Advanced multimedia mastery</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>🚀 Next Steps</h3>
+                                <ul>
+                                    <li>Practice building complete websites</li>
+                                    <li>Learn CSS for styling and layout</li>
+                                    <li>Explore JavaScript for interactivity</li>
+                                    <li>Study web frameworks and libraries</li>
+                                    <li>Build a portfolio of projects</li>
+                                    <li>Continue with advanced web technologies</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-completion">
+                            <div class="completion-message">
+                                <h3>🎉 HTML Master Certification!</h3>
+                                <p>Congratulations! You've completed the comprehensive HTML course and mastered everything from basic markup to advanced multimedia integration. You're now ready to build professional, accessible, and modern web experiences!</p>
+                            </div>
+                            
+                            <div class="completion-actions">
+                                <button class="btn btn-primary btn-large" onclick="markCourseComplete()">
+                                    🏆 Complete Course
+                                </button>
+                                <a href="../index.html" class="btn btn-outline btn-large">
+                                    📚 Return to Course Home
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div id="notes-panel" class="notes-panel">
+        <div class="notes-header">
+            <h3>📝 My Notes</h3>
+            <button class="close-btn" onclick="toggleNotes()">&times;</button>
+        </div>
+        <div class="notes-content">
+            <textarea id="notes-textarea" placeholder="Take notes about advanced HTML5 multimedia..."></textarea>
+        </div>
+        <div class="notes-footer">
+            <button class="btn btn-sm btn-outline" onclick="clearNotes()">Clear</button>
+            <button class="btn btn-sm btn-primary" onclick="saveNotes()">Save</button>
+        </div>
+    </div>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        let currentProgress = 0;
+        let totalSections = 7;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLesson();
+            initializeCodeEditor();
+            loadNotes();
+            trackProgress();
+        });
+        
+        function initializeLesson() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        updateActiveTocLink(id);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function updateActiveTocLink(activeId) {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        function initializeCodeEditor() {
+            const textarea = document.getElementById('html-editor');
+            if (!textarea) return;
+            
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: 'htmlmixed',
+                theme: 'default',
+                lineNumbers: true,
+                autoCloseTags: true,
+                autoCloseBrackets: true,
+                indentUnit: 2,
+                tabSize: 2,
+                lineWrapping: true
+            });
+            
+            editor.on('change', function() {
+                updatePreview();
+            });
+            
+            window.htmlEditor = editor;
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            if (!window.htmlEditor) return;
+            
+            const code = window.htmlEditor.getValue();
+            const previewFrame = document.getElementById('preview-frame');
+            if (!previewFrame) return;
+            
+            const blob = new Blob([code], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            previewFrame.src = url;
+        }
+        
+        function resetCode() {
+            const defaultCode = document.getElementById('html-editor').defaultValue;
+            if (window.htmlEditor) {
+                window.htmlEditor.setValue(defaultCode);
+                updatePreview();
+            }
+        }
+        
+        function trackProgress() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const progressFill = document.getElementById('lesson-progress');
+            const progressText = document.getElementById('progress-text');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        currentProgress++;
+                        const percentage = Math.min((currentProgress / totalSections) * 100, 100);
+                        progressFill.style.width = percentage + '%';
+                        progressText.textContent = Math.round(percentage) + '% Complete';
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+        }
+        
+        function saveNotes() {
+            const notes = document.getElementById('notes-textarea').value;
+            localStorage.setItem('lesson10-notes', notes);
+            showNotification('Notes saved!');
+        }
+        
+        function loadNotes() {
+            const savedNotes = localStorage.getItem('lesson10-notes');
+            if (savedNotes) {
+                document.getElementById('notes-textarea').value = savedNotes;
+            }
+        }
+        
+        function clearNotes() {
+            document.getElementById('notes-textarea').value = '';
+            localStorage.removeItem('lesson10-notes');
+            showNotification('Notes cleared!');
+        }
+        
+        function markComplete() {
+            if (window.HTMLCourse) {
+                window.HTMLCourse.markLessonComplete(10);
+            }
+            showNotification('Lesson 10 completed! 🎉');
+        }
+        
+        function markCourseComplete() {
+            if (window.HTMLCourse) {
+                window.HTMLCourse.markCourseComplete();
+            }
+            showNotification('🏆 Congratulations! HTML Course completed! 🎉');
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        function copyCode(button) {
+            const codeBlock = button.parentNode.nextElementSibling.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+        
+        function showExerciseSolution(exerciseNumber) {
+            alert(`Exercise ${exerciseNumber} solution would be shown here in a complete implementation.`);
+        }
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab-btn')) {
+                const tabId = e.target.getAttribute('data-tab');
+                const tabs = e.target.parentNode.querySelectorAll('.tab-btn');
+                const contents = e.target.closest('.code-playground').querySelectorAll('.tab-content');
+                
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                
+                e.target.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

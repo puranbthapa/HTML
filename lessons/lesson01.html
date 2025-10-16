@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Introduction to HTML - HTML Course</title>
+    <meta name="description" content="Learn the fundamentals of HTML - what it is, how it works, and why it's essential for web development.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/lesson.css">
+    
+    <!-- Code Editor (CodeMirror) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="lesson-header">
+        <div class="container">
+            <nav class="lesson-nav">
+                <a href="../index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    Back to Course
+                </a>
+                
+                <div class="lesson-info">
+                    <span class="lesson-number">01</span>
+                    <h1 class="lesson-title">Introduction to HTML</h1>
+                </div>
+                
+                <div class="lesson-actions">
+                    <button class="btn btn-outline btn-sm" onclick="toggleNotes()">
+                        📝 Notes
+                    </button>
+                    <button class="btn btn-primary btn-sm" onclick="markComplete()">
+                        ✓ Complete
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <div class="container">
+            <div class="lesson-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="lesson-sidebar">
+                    <div class="sidebar-content">
+                        <h3>Contents</h3>
+                        <nav class="lesson-toc">
+                            <a href="#what-is-html" class="toc-link">What is HTML?</a>
+                            <a href="#html-history" class="toc-link">Brief History</a>
+                            <a href="#how-html-works" class="toc-link">How HTML Works</a>
+                            <a href="#html-structure" class="toc-link">HTML Structure</a>
+                            <a href="#first-html" class="toc-link">Your First HTML</a>
+                            <a href="#exercises" class="toc-link">Practice Exercises</a>
+                            <a href="#summary" class="toc-link">Summary</a>
+                        </nav>
+                        
+                        <div class="lesson-progress">
+                            <h4>Lesson Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="lesson-progress"></div>
+                            </div>
+                            <span class="progress-text" id="progress-text">0% Complete</span>
+                        </div>
+                        
+                        <div class="lesson-navigation">
+                            <a href="../index.html" class="nav-btn prev-lesson">
+                                ← Course Home
+                            </a>
+                            <a href="lesson02.html" class="nav-btn next-lesson">
+                                Next Lesson →
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Lesson Content -->
+                <article class="lesson-main">
+                    <!-- Introduction -->
+                    <section class="lesson-section" id="introduction">
+                        <div class="section-header">
+                            <h2>Welcome to HTML!</h2>
+                            <span class="section-duration">⏱️ 15 minutes</span>
+                        </div>
+                        
+                        <p class="lead">
+                            Welcome to your first lesson in HTML! In this lesson, you'll discover what HTML is, 
+                            why it's fundamental to web development, and how it creates the structure of every webpage you see.
+                        </p>
+                        
+                        <div class="learning-objectives">
+                            <h3>🎯 Learning Objectives</h3>
+                            <ul>
+                                <li>Understand what HTML is and its role in web development</li>
+                                <li>Learn about the history and evolution of HTML</li>
+                                <li>Discover how HTML works with browsers</li>
+                                <li>Identify the basic structure of an HTML document</li>
+                                <li>Create your first HTML page</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- What is HTML? -->
+                    <section class="lesson-section" id="what-is-html">
+                        <h2>What is HTML?</h2>
+                        
+                        <div class="concept-box">
+                            <h3>💡 Key Concept</h3>
+                            <p>
+                                <strong>HTML (HyperText Markup Language)</strong> is the standard markup language 
+                                used to create web pages. It describes the structure and content of a webpage using elements and tags.
+                            </p>
+                        </div>
+                        
+                        <p>
+                            Think of HTML as the skeleton of a webpage. Just like how a building needs a frame before 
+                            you can add walls, windows, and decorations, a webpage needs HTML structure before you can 
+                            add styling (CSS) or interactive features (JavaScript).
+                        </p>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>🏗️ HTML</h4>
+                                <p>Structure & Content</p>
+                                <ul>
+                                    <li>Headings and paragraphs</li>
+                                    <li>Links and images</li>
+                                    <li>Lists and tables</li>
+                                    <li>Forms and buttons</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🎨 CSS</h4>
+                                <p>Styling & Layout</p>
+                                <ul>
+                                    <li>Colors and fonts</li>
+                                    <li>Spacing and positioning</li>
+                                    <li>Animations and effects</li>
+                                    <li>Responsive design</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>⚡ JavaScript</h4>
+                                <p>Interactivity & Behavior</p>
+                                <ul>
+                                    <li>User interactions</li>
+                                    <li>Dynamic content</li>
+                                    <li>Form validation</li>
+                                    <li>API integration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- HTML History -->
+                    <section class="lesson-section" id="html-history">
+                        <h2>A Brief History of HTML</h2>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1991</div>
+                                <div class="timeline-content">
+                                    <h4>HTML Born</h4>
+                                    <p>Tim Berners-Lee creates the first version of HTML with 18 elements</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1995</div>
+                                <div class="timeline-content">
+                                    <h4>HTML 2.0</h4>
+                                    <p>First official HTML standard published</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1997</div>
+                                <div class="timeline-content">
+                                    <h4>HTML 3.2 & 4.0</h4>
+                                    <p>Introduces tables, forms, and better styling support</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2014</div>
+                                <div class="timeline-content">
+                                    <h4>HTML5</h4>
+                                    <p>Modern HTML with semantic elements, multimedia, and APIs</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">Today</div>
+                                <div class="timeline-content">
+                                    <h4>Living Standard</h4>
+                                    <p>HTML continues to evolve with new features and improvements</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- How HTML Works -->
+                    <section class="lesson-section" id="how-html-works">
+                        <h2>How HTML Works</h2>
+                        
+                        <p>
+                            Understanding how HTML works will help you write better code. Here's the process 
+                            from writing HTML to seeing it in a browser:
+                        </p>
+                        
+                        <div class="process-flow">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <h4>Write HTML Code</h4>
+                                <p>You write HTML code in a text file with a <code>.html</code> extension</p>
+                            </div>
+                            
+                            <div class="process-arrow">→</div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <h4>Browser Reads</h4>
+                                <p>The web browser reads and parses your HTML code</p>
+                            </div>
+                            
+                            <div class="process-arrow">→</div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <h4>DOM Created</h4>
+                                <p>Browser creates a Document Object Model (DOM) from your HTML</p>
+                            </div>
+                            
+                            <div class="process-arrow">→</div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <h4>Page Displayed</h4>
+                                <p>The browser renders the webpage visually for users</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h3>🔍 What is the DOM?</h3>
+                            <p>
+                                The <strong>Document Object Model (DOM)</strong> is a tree-like structure that represents 
+                                your HTML document. It allows browsers (and JavaScript) to access and modify the content, 
+                                structure, and styling of your webpage.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- HTML Structure -->
+                    <section class="lesson-section" id="html-structure">
+                        <h2>Basic HTML Structure</h2>
+                        
+                        <p>
+                            Every HTML document follows a basic structure. Let's break down the essential parts:
+                        </p>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Basic HTML Structure</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website!&lt;/h1&gt;
+    &lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                        
+                        <div class="structure-breakdown">
+                            <h3>Let's Break It Down:</h3>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;!DOCTYPE html&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Document Type Declaration</h4>
+                                    <p>Tells the browser this is an HTML5 document. Always put this at the very top.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;html lang="en"&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Root Element</h4>
+                                    <p>The main container for all HTML content. The <code>lang="en"</code> specifies the language.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;head&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Document Head</h4>
+                                    <p>Contains metadata about the document - not visible to users but important for browsers and search engines.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;body&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Document Body</h4>
+                                    <p>Contains all the visible content that users will see and interact with.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- First HTML Page -->
+                    <section class="lesson-section" id="first-html">
+                        <h2>Create Your First HTML Page</h2>
+                        
+                        <p>
+                            Now it's time to create your first HTML page! Follow these steps:
+                        </p>
+                        
+                        <div class="step-by-step">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Open a Text Editor</h4>
+                                    <p>You can use any text editor like Notepad (Windows), TextEdit (Mac), or VS Code (recommended).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Type the HTML Code</h4>
+                                    <p>Copy and paste or type the code below into your editor:</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Interactive Code Editor -->
+                        <div class="code-playground">
+                            <div class="playground-header">
+                                <h3>Try It Yourself!</h3>
+                                <div class="playground-tabs">
+                                    <button class="tab-btn active" data-tab="html">HTML</button>
+                                    <button class="tab-btn" data-tab="preview">Preview</button>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-content">
+                                <div class="tab-content active" id="html-tab">
+                                    <textarea id="html-editor" class="code-editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;Welcome to my first HTML page!&lt;/p&gt;
+    &lt;p&gt;I'm learning HTML and it's exciting!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                                </div>
+                                
+                                <div class="tab-content" id="preview-tab">
+                                    <iframe id="preview-frame" class="preview-frame"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-actions">
+                                <button class="btn btn-primary" onclick="updatePreview()">Update Preview</button>
+                                <button class="btn btn-outline" onclick="resetCode()">Reset Code</button>
+                            </div>
+                        </div>
+                        
+                        <div class="step-by-step">
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Save the File</h4>
+                                    <p>Save the file with a <code>.html</code> extension, like <code>index.html</code> or <code>my-first-page.html</code></p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Open in Browser</h4>
+                                    <p>Double-click the file or drag it into your web browser to see your webpage!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Practice Exercises -->
+                    <section class="lesson-section" id="exercises">
+                        <h2>Practice Exercises</h2>
+                        
+                        <div class="exercises-grid">
+                            <div class="exercise-card">
+                                <h3>Exercise 1: Personal Introduction</h3>
+                                <p>Create an HTML page that introduces yourself. Include:</p>
+                                <ul>
+                                    <li>A main heading with your name</li>
+                                    <li>A paragraph about yourself</li>
+                                    <li>A paragraph about your hobbies</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(1)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 2: Favorite Things</h3>
+                                <p>Create a webpage about your favorite things. Include:</p>
+                                <ul>
+                                    <li>A title "My Favorite Things"</li>
+                                    <li>Multiple headings for different categories</li>
+                                    <li>Paragraphs describing each favorite thing</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(2)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 3: Dream Vacation</h3>
+                                <p>Describe your dream vacation destination:</p>
+                                <ul>
+                                    <li>A compelling title</li>
+                                    <li>Why you want to visit this place</li>
+                                    <li>What you would do there</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(3)">Show Solution</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Exercise Solutions (Hidden by default) -->
+                        <div id="exercise-solutions" style="display: none;">
+                            <div class="solution" id="solution-1">
+                                <h4>Solution 1: Personal Introduction</h4>
+                                <div class="code-example">
+                                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;About Me&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hi, I'm Alex!&lt;/h1&gt;
+    &lt;p&gt;I'm a student learning web development. I love creating things with code and solving problems.&lt;/p&gt;
+    &lt;p&gt;My hobbies include reading, playing guitar, and exploring nature. I also enjoy learning new programming languages!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Summary -->
+                    <section class="lesson-section" id="summary">
+                        <h2>Lesson Summary</h2>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>🎯 What You Learned</h3>
+                                <ul>
+                                    <li>HTML is the markup language for web pages</li>
+                                    <li>HTML provides structure and content</li>
+                                    <li>Every HTML document has a basic structure</li>
+                                    <li>Browsers parse HTML to display webpages</li>
+                                    <li>You can create HTML files with any text editor</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>🔑 Key Terms</h3>
+                                <dl>
+                                    <dt>HTML</dt>
+                                    <dd>HyperText Markup Language</dd>
+                                    
+                                    <dt>Element</dt>
+                                    <dd>Building blocks of HTML (like &lt;h1&gt;, &lt;p&gt;)</dd>
+                                    
+                                    <dt>Tag</dt>
+                                    <dd>The markup that defines elements</dd>
+                                    
+                                    <dt>DOM</dt>
+                                    <dd>Document Object Model</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>📝 Next Steps</h3>
+                                <ul>
+                                    <li>Practice creating simple HTML pages</li>
+                                    <li>Experiment with different content</li>
+                                    <li>Try modifying the code examples</li>
+                                    <li>Move on to Lesson 2: HTML Document Structure</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-completion">
+                            <div class="completion-message">
+                                <h3>🎉 Congratulations!</h3>
+                                <p>You've completed your first HTML lesson. You now understand the basics of HTML and have created your first webpage!</p>
+                            </div>
+                            
+                            <div class="completion-actions">
+                                <button class="btn btn-primary btn-large" onclick="markLessonComplete()">
+                                    ✓ Mark Lesson Complete
+                                </button>
+                                <a href="lesson02.html" class="btn btn-outline btn-large">
+                                    Next: HTML Document Structure →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Notes Panel -->
+    <div id="notes-panel" class="notes-panel">
+        <div class="notes-header">
+            <h3>📝 My Notes</h3>
+            <button class="close-btn" onclick="toggleNotes()">&times;</button>
+        </div>
+        <div class="notes-content">
+            <textarea id="notes-textarea" placeholder="Take notes about this lesson..."></textarea>
+        </div>
+        <div class="notes-footer">
+            <button class="btn btn-sm btn-outline" onclick="clearNotes()">Clear</button>
+            <button class="btn btn-sm btn-primary" onclick="saveNotes()">Save</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/script.js"></script>
+    <script>
+        // Lesson-specific JavaScript
+        let currentProgress = 0;
+        let totalSections = 7;
+        
+        // Initialize lesson
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLesson();
+            initializeCodeEditor();
+            loadNotes();
+            trackProgress();
+        });
+        
+        function initializeLesson() {
+            // Add scroll spy for navigation
+            const sections = document.querySelectorAll('.lesson-section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        updateActiveTocLink(id);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function updateActiveTocLink(activeId) {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        function initializeCodeEditor() {
+            // Initialize CodeMirror editor
+            const textarea = document.getElementById('html-editor');
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: 'htmlmixed',
+                theme: 'default',
+                lineNumbers: true,
+                autoCloseTags: true,
+                autoCloseBrackets: true,
+                indentUnit: 2,
+                tabSize: 2,
+                lineWrapping: true
+            });
+            
+            // Auto-update preview
+            editor.on('change', function() {
+                updatePreview();
+            });
+            
+            // Store editor reference
+            window.htmlEditor = editor;
+            
+            // Initial preview update
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            const editor = window.htmlEditor;
+            const code = editor.getValue();
+            const previewFrame = document.getElementById('preview-frame');
+            
+            const blob = new Blob([code], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            previewFrame.src = url;
+        }
+        
+        function resetCode() {
+            const defaultCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>Welcome to my first HTML page!</p>
+    <p>I'm learning HTML and it's exciting!</p>
+</body>
+</html>`;
+            
+            window.htmlEditor.setValue(defaultCode);
+            updatePreview();
+        }
+        
+        function trackProgress() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const progressFill = document.getElementById('lesson-progress');
+            const progressText = document.getElementById('progress-text');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        currentProgress++;
+                        const percentage = Math.min((currentProgress / totalSections) * 100, 100);
+                        progressFill.style.width = percentage + '%';
+                        progressText.textContent = Math.round(percentage) + '% Complete';
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        // Notes functionality
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+        }
+        
+        function saveNotes() {
+            const notes = document.getElementById('notes-textarea').value;
+            localStorage.setItem('lesson1-notes', notes);
+            showNotification('Notes saved!');
+        }
+        
+        function loadNotes() {
+            const savedNotes = localStorage.getItem('lesson1-notes');
+            if (savedNotes) {
+                document.getElementById('notes-textarea').value = savedNotes;
+            }
+        }
+        
+        function clearNotes() {
+            document.getElementById('notes-textarea').value = '';
+            localStorage.removeItem('lesson1-notes');
+            showNotification('Notes cleared!');
+        }
+        
+        function markComplete() {
+            // Mark lesson as complete in course progress
+            if (window.HTMLCourse) {
+                window.HTMLCourse.markLessonComplete(1);
+            }
+            showNotification('Lesson marked as complete! 🎉');
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        function copyCode(button) {
+            const codeBlock = button.parentNode.nextElementSibling.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+        
+        function showExerciseSolution(exerciseNumber) {
+            const solutions = document.getElementById('exercise-solutions');
+            const solution = document.getElementById(`solution-${exerciseNumber}`);
+            
+            solutions.style.display = 'block';
+            solution.style.display = 'block';
+            solution.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Playground tab functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab-btn')) {
+                const tabId = e.target.getAttribute('data-tab');
+                const tabs = e.target.parentNode.querySelectorAll('.tab-btn');
+                const contents = e.target.closest('.code-playground').querySelectorAll('.tab-content');
+                
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                
+                e.target.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8: Semantic Elements - HTML Course</title>
+    <meta name="description" content="Master HTML5 semantic elements for better document structure, accessibility, and SEO optimization.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/lesson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="container">
+            <nav class="lesson-nav">
+                <a href="../index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    Back to Course
+                </a>
+                <div class="lesson-info">
+                    <span class="lesson-number">08</span>
+                    <h1 class="lesson-title">Semantic Elements</h1>
+                </div>
+                <div class="lesson-actions">
+                    <button class="btn btn-outline btn-sm" onclick="toggleNotes()">📝 Notes</button>
+                    <button class="btn btn-primary btn-sm" onclick="markComplete()">✓ Complete</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <div class="container">
+            <div class="lesson-layout">
+                <aside class="lesson-sidebar">
+                    <div class="sidebar-content">
+                        <h3>Contents</h3>
+                        <nav class="lesson-toc">
+                            <a href="#semantic-overview" class="toc-link">Semantic HTML</a>
+                            <a href="#structural-elements" class="toc-link">Structural Elements</a>
+                            <a href="#content-elements" class="toc-link">Content Elements</a>
+                            <a href="#page-layout" class="toc-link">Page Layout</a>
+                            <a href="#best-practices" class="toc-link">Best Practices</a>
+                            <a href="#exercises" class="toc-link">Practice Exercises</a>
+                            <a href="#summary" class="toc-link">Summary</a>
+                        </nav>
+                        
+                        <div class="lesson-progress">
+                            <h4>Lesson Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="lesson-progress"></div>
+                            </div>
+                            <span class="progress-text" id="progress-text">0% Complete</span>
+                        </div>
+                        
+                        <div class="lesson-navigation">
+                            <a href="lesson07.html" class="nav-btn prev-lesson">← Previous Lesson</a>
+                            <a href="lesson09.html" class="nav-btn next-lesson">Next Lesson →</a>
+                        </div>
+                    </div>
+                </aside>
+
+                <article class="lesson-main">
+                    <section class="lesson-section" id="introduction">
+                        <div class="section-header">
+                            <h2>HTML5 Semantic Elements</h2>
+                            <span class="section-duration">⏱️ 35 minutes</span>
+                        </div>
+                        
+                        <p class="lead">
+                            Semantic HTML provides meaning to your content structure. Learn to use HTML5's semantic 
+                            elements to create well-organized, accessible, and SEO-friendly web pages that 
+                            communicate their purpose clearly.
+                        </p>
+                        
+                        <div class="learning-objectives">
+                            <h3>🎯 Learning Objectives</h3>
+                            <ul>
+                                <li>Understand the importance of semantic markup</li>
+                                <li>Use structural elements for page layout</li>
+                                <li>Implement content sectioning elements properly</li>
+                                <li>Create accessible document outlines</li>
+                                <li>Improve SEO through semantic structure</li>
+                                <li>Follow modern HTML5 semantic best practices</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="semantic-overview">
+                        <h2>What is Semantic HTML?</h2>
+                        
+                        <div class="concept-box">
+                            <h3>💡 Semantic Meaning</h3>
+                            <p>
+                                Semantic HTML uses elements that clearly describe their meaning to both the browser 
+                                and developer. Instead of generic &lt;div&gt; elements, semantic elements like 
+                                &lt;header&gt;, &lt;nav&gt;, and &lt;article&gt; convey purpose and structure.
+                            </p>
+                        </div>
+                        
+                        <h3>Benefits of Semantic HTML</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>♿ Accessibility</h4>
+                                <ul>
+                                    <li>Screen readers understand content structure</li>
+                                    <li>Better navigation landmarks</li>
+                                    <li>Improved keyboard navigation</li>
+                                    <li>Clearer document outline</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🔍 SEO Benefits</h4>
+                                <ul>
+                                    <li>Search engines understand content hierarchy</li>
+                                    <li>Better content indexing</li>
+                                    <li>Improved search rankings</li>
+                                    <li>Rich snippets in search results</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🛠️ Developer Experience</h4>
+                                <ul>
+                                    <li>More readable and maintainable code</li>
+                                    <li>Easier debugging and styling</li>
+                                    <li>Better team collaboration</li>
+                                    <li>Future-proof code structure</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🖥️ Browser Support</h4>
+                                <ul>
+                                    <li>Better default styling</li>
+                                    <li>Consistent behavior across browsers</li>
+                                    <li>Enhanced user experience</li>
+                                    <li>Forward compatibility</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3>Before vs After Semantic HTML</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Non-Semantic vs Semantic</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- ❌ Non-semantic approach --&gt;
+&lt;div class="header"&gt;
+    &lt;div class="nav"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="main-content"&gt;
+    &lt;div class="article"&gt;...&lt;/div&gt;
+    &lt;div class="sidebar"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer"&gt;...&lt;/div&gt;
+
+&lt;!-- ✅ Semantic approach --&gt;
+&lt;header&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;...&lt;/article&gt;
+    &lt;aside&gt;...&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="structural-elements">
+                        <h2>Structural Semantic Elements</h2>
+                        
+                        <h3>Page Structure Elements</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;header&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Page/Section Header</h4>
+                                    <p>Contains introductory content, navigation, logos</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;nav&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Navigation Links</h4>
+                                    <p>Contains major navigation blocks</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;main&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Main Content</h4>
+                                    <p>Primary content area (only one per page)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;footer&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Page/Section Footer</h4>
+                                    <p>Contains closing information, copyright, links</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Basic Page Structure</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Semantic Page Structure&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Website&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;!-- Main content goes here --&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2024 My Website. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+                    </section>
+
+                    <section class="lesson-section" id="content-elements">
+                        <h2>Content Sectioning Elements</h2>
+                        
+                        <h3>Organizing Content</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;section&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Thematic Sections</h4>
+                                    <p>Groups related content together</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;article&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Standalone Content</h4>
+                                    <p>Self-contained, distributable content</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;aside&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Sidebar Content</h4>
+                                    <p>Complementary information</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;figure&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Self-contained Media</h4>
+                                    <p>Images, diagrams with optional captions</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="code-playground">
+                            <div class="playground-header">
+                                <h3>Complete Semantic Website</h3>
+                                <div class="playground-tabs">
+                                    <button class="tab-btn active" data-tab="html">HTML</button>
+                                    <button class="tab-btn" data-tab="preview">Preview</button>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-content">
+                                <div class="tab-content active" id="html-tab">
+                                    <textarea id="html-editor" class="code-editor" title="HTML Editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Semantic HTML5 Blog&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        /* Main Content */
+        main {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Article Styles */
+        article {
+            padding: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        article header h2 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-meta time {
+            font-weight: 500;
+        }
+        
+        /* Section Styles */
+        section {
+            margin: 1.5rem 0;
+        }
+        
+        section h3 {
+            color: #34495e;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        /* Figure Styles */
+        figure {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        figcaption {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Aside Styles */
+        aside {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            height: fit-content;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        aside h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e74c3c;
+        }
+        
+        .widget {
+            margin-bottom: 2rem;
+        }
+        
+        .widget:last-child {
+            margin-bottom: 0;
+        }
+        
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            background: #3498db;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+        
+        .tag:hover {
+            background: #2980b9;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Page Header --&gt;
+    &lt;header&gt;
+        &lt;div class="container"&gt;
+            &lt;div&gt;
+                &lt;h1&gt;🌐 TechBlog Pro&lt;/h1&gt;
+                &lt;p&gt;Exploring the future of web development&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;nav role="navigation" aria-label="Main navigation"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#tutorials"&gt;Tutorials&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#blog"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;div class="container"&gt;
+        &lt;div class="main-layout"&gt;
+            &lt;!-- Main Content Area --&gt;
+            &lt;main role="main"&gt;
+                &lt;!-- Featured Article --&gt;
+                &lt;article&gt;
+                    &lt;header&gt;
+                        &lt;h2&gt;Understanding HTML5 Semantic Elements&lt;/h2&gt;
+                        &lt;div class="article-meta"&gt;
+                            Published on &lt;time datetime="2024-10-14"&gt;October 14, 2024&lt;/time&gt; 
+                            by &lt;address&gt;John Developer&lt;/address&gt;
+                        &lt;/div&gt;
+                    &lt;/header&gt;
+                    
+                    &lt;section&gt;
+                        &lt;h3&gt;Introduction to Semantic HTML&lt;/h3&gt;
+                        &lt;p&gt;
+                            Semantic HTML5 elements provide meaning to your web page structure, 
+                            making it more accessible to users and search engines alike. In this 
+                            comprehensive guide, we'll explore how to use these elements effectively.
+                        &lt;/p&gt;
+                        
+                        &lt;figure&gt;
+                            &lt;img src="https://picsum.photos/600/300?random=1" 
+                                 alt="Diagram showing HTML5 semantic elements structure"&gt;
+                            &lt;figcaption&gt;HTML5 semantic elements create meaningful page structure&lt;/figcaption&gt;
+                        &lt;/figure&gt;
+                    &lt;/section&gt;
+                    
+                    &lt;section&gt;
+                        &lt;h3&gt;Key Benefits&lt;/h3&gt;
+                        &lt;p&gt;
+                            Using semantic elements improves accessibility, SEO performance, 
+                            and code maintainability. Screen readers can navigate your content 
+                            more effectively, and search engines better understand your page structure.
+                        &lt;/p&gt;
+                    &lt;/section&gt;
+                &lt;/article&gt;
+
+                &lt;!-- Secondary Article --&gt;
+                &lt;article&gt;
+                    &lt;header&gt;
+                        &lt;h2&gt;Building Accessible Websites&lt;/h2&gt;
+                        &lt;div class="article-meta"&gt;
+                            Published on &lt;time datetime="2024-10-12"&gt;October 12, 2024&lt;/time&gt; 
+                            by &lt;address&gt;Sarah WebDev&lt;/address&gt;
+                        &lt;/div&gt;
+                    &lt;/header&gt;
+                    
+                    &lt;section&gt;
+                        &lt;h3&gt;Why Accessibility Matters&lt;/h3&gt;
+                        &lt;p&gt;
+                            Web accessibility ensures that people with disabilities can use 
+                            your website effectively. It's not just good practice—it's often 
+                            required by law and always the right thing to do.
+                        &lt;/p&gt;
+                    &lt;/section&gt;
+                    
+                    &lt;section&gt;
+                        &lt;h3&gt;Practical Implementation&lt;/h3&gt;
+                        &lt;p&gt;
+                            Start with semantic HTML, add proper ARIA labels, ensure good 
+                            color contrast, and test with screen readers. Small steps lead 
+                            to big improvements in user experience.
+                        &lt;/p&gt;
+                    &lt;/section&gt;
+                &lt;/article&gt;
+            &lt;/main&gt;
+
+            &lt;!-- Sidebar Content --&gt;
+            &lt;aside role="complementary"&gt;
+                &lt;div class="widget"&gt;
+                    &lt;h3&gt;📚 Recent Posts&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;CSS Grid vs Flexbox&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;JavaScript ES2024 Features&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;React vs Vue Comparison&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Web Performance Optimization&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;div class="widget"&gt;
+                    &lt;h3&gt;🏷️ Popular Tags&lt;/h3&gt;
+                    &lt;div class="tag-list"&gt;
+                        &lt;a href="#" class="tag"&gt;HTML5&lt;/a&gt;
+                        &lt;a href="#" class="tag"&gt;CSS3&lt;/a&gt;
+                        &lt;a href="#" class="tag"&gt;JavaScript&lt;/a&gt;
+                        &lt;a href="#" class="tag"&gt;React&lt;/a&gt;
+                        &lt;a href="#" class="tag"&gt;Accessibility&lt;/a&gt;
+                        &lt;a href="#" class="tag"&gt;SEO&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="widget"&gt;
+                    &lt;h3&gt;📧 Newsletter&lt;/h3&gt;
+                    &lt;p&gt;Subscribe to get the latest web development tips and tutorials.&lt;/p&gt;
+                    &lt;form action="#" method="post"&gt;
+                        &lt;input type="email" placeholder="Enter your email" 
+                               style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;"&gt;
+                        &lt;button type="submit" 
+                                style="width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;"&gt;
+                            Subscribe
+                        &lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/aside&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Page Footer --&gt;
+    &lt;footer role="contentinfo"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="footer-content"&gt;
+                &lt;section class="footer-section"&gt;
+                    &lt;h4&gt;About TechBlog Pro&lt;/h4&gt;
+                    &lt;p&gt;
+                        We're passionate about sharing knowledge and helping developers 
+                        create better, more accessible web experiences.
+                    &lt;/p&gt;
+                &lt;/section&gt;
+                
+                &lt;section class="footer-section"&gt;
+                    &lt;h4&gt;Quick Links&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Terms of Service&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;RSS Feed&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/section&gt;
+                
+                &lt;section class="footer-section"&gt;
+                    &lt;h4&gt;Connect With Us&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/section&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="footer-bottom"&gt;
+                &lt;p&gt;&amp;copy; 2024 TechBlog Pro. All rights reserved. Built with semantic HTML5.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                                </div>
+                                
+                                <div class="tab-content" id="preview-tab">
+                                    <iframe id="preview-frame" class="preview-frame" title="Semantic Elements Preview"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-actions">
+                                <button class="btn btn-primary" onclick="updatePreview()">Update Preview</button>
+                                <button class="btn btn-outline" onclick="resetCode()">Reset Code</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="page-layout">
+                        <h2>Common Page Layouts</h2>
+                        
+                        <h3>Blog Layout Pattern</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Semantic Blog Structure</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Blog&lt;/h1&gt;
+        &lt;nav&gt;...&lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;Article Title&lt;/h2&gt;
+                &lt;time datetime="2024-10-14"&gt;October 14, 2024&lt;/time&gt;
+            &lt;/header&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;Introduction&lt;/h3&gt;
+                &lt;p&gt;Article content...&lt;/p&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;Main Points&lt;/h3&gt;
+                &lt;p&gt;More content...&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+    
+    &lt;aside&gt;
+        &lt;section&gt;
+            &lt;h3&gt;Recent Posts&lt;/h3&gt;
+            &lt;ul&gt;...&lt;/ul&gt;
+        &lt;/section&gt;
+    &lt;/aside&gt;
+    
+    &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+        </div>
+                        
+                        <h3>E-commerce Layout Pattern</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Product Page Structure</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;main&gt;
+    &lt;article itemscope itemtype="https://schema.org/Product"&gt;
+        &lt;header&gt;
+            &lt;h1 itemprop="name"&gt;Product Name&lt;/h1&gt;
+        &lt;/header&gt;
+        
+        &lt;section class="product-images"&gt;
+            &lt;figure&gt;
+                &lt;img itemprop="image" src="product.jpg" alt="Product photo"&gt;
+            &lt;/figure&gt;
+        &lt;/section&gt;
+        
+        &lt;section class="product-details"&gt;
+            &lt;h2&gt;Product Details&lt;/h2&gt;
+            &lt;p itemprop="description"&gt;Product description...&lt;/p&gt;
+            &lt;data itemprop="price" value="99.99"&gt;$99.99&lt;/data&gt;
+        &lt;/section&gt;
+        
+        &lt;section class="reviews"&gt;
+            &lt;h2&gt;Customer Reviews&lt;/h2&gt;
+            &lt;article&gt;...&lt;/article&gt;
+        &lt;/section&gt;
+    &lt;/article&gt;
+&lt;/main&gt;</code></pre>
+        </div>
+                    </section>
+
+                    <section class="lesson-section" id="best-practices">
+                        <h2>Best Practices</h2>
+                        
+                        <h3>Semantic Element Guidelines</h3>
+                        <div class="info-box">
+                            <h3>🎯 Usage Guidelines</h3>
+                            <ul>
+                                <li><strong>&lt;header&gt;</strong> - Use for page or section introductions, not just the top of the page</li>
+                                <li><strong>&lt;nav&gt;</strong> - Reserve for major navigation blocks, not every group of links</li>
+                                <li><strong>&lt;main&gt;</strong> - Use only once per page for the primary content</li>
+                                <li><strong>&lt;article&gt;</strong> - Content that could stand alone (blog posts, news articles)</li>
+                                <li><strong>&lt;section&gt;</strong> - Thematic groupings of content with headings</li>
+                                <li><strong>&lt;aside&gt;</strong> - Complementary content (sidebars, related links)</li>
+                                <li><strong>&lt;footer&gt;</strong> - Closing information for page or sections</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>When NOT to Use Semantic Elements</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>❌ Avoid These Mistakes</h4>
+                                <ul>
+                                    <li>Don't use &lt;section&gt; just for styling</li>
+                                    <li>Don't use multiple &lt;main&gt; elements</li>
+                                    <li>Don't use &lt;article&gt; for non-standalone content</li>
+                                    <li>Don't nest &lt;header&gt; in &lt;header&gt;</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>✅ Do This Instead</h4>
+                                <ul>
+                                    <li>Use &lt;div&gt; for pure styling containers</li>
+                                    <li>Keep one &lt;main&gt; per page</li>
+                                    <li>Use &lt;section&gt; for thematic content</li>
+                                    <li>Plan your document outline carefully</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3>Accessibility Considerations</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">ARIA Landmarks</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Use ARIA roles when semantic elements aren't enough --&gt;
+&lt;nav role="navigation" aria-label="Main navigation"&gt;...&lt;/nav&gt;
+&lt;main role="main"&gt;...&lt;/main&gt;
+&lt;aside role="complementary" aria-label="Sidebar content"&gt;...&lt;/aside&gt;
+&lt;footer role="contentinfo"&gt;...&lt;/footer&gt;
+
+&lt;!-- Skip links for keyboard users --&gt;
+&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;</code></pre>
+        </div>
+                    </section>
+
+                    <section class="lesson-section" id="exercises">
+                        <h2>Practice Exercises</h2>
+                        
+                        <div class="exercises-grid">
+                            <div class="exercise-card">
+                                <h3>Exercise 1: News Website</h3>
+                                <p>Create a semantic news website structure:</p>
+                                <ul>
+                                    <li>Header with site navigation</li>
+                                    <li>Main section with multiple articles</li>
+                                    <li>Sidebar with recent news and categories</li>
+                                    <li>Footer with site information</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(1)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 2: Portfolio Website</h3>
+                                <p>Build a semantic portfolio structure:</p>
+                                <ul>
+                                    <li>About section with personal information</li>
+                                    <li>Projects section with individual project articles</li>
+                                    <li>Skills and testimonials sections</li>
+                                    <li>Contact form in semantic structure</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(2)">Show Solution</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="summary">
+                        <h2>Lesson Summary</h2>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>🎯 What You Learned</h3>
+                                <ul>
+                                    <li>Semantic HTML provides meaning and structure</li>
+                                    <li>Structural elements organize page layout</li>
+                                    <li>Content elements group related information</li>
+                                    <li>Proper semantics improve accessibility and SEO</li>
+                                    <li>Best practices ensure effective implementation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>🏗️ Structural Elements</h3>
+                                <dl>
+                                    <dt>&lt;header&gt;</dt>
+                                    <dd>Page or section introduction</dd>
+                                    
+                                    <dt>&lt;nav&gt;</dt>
+                                    <dd>Major navigation blocks</dd>
+                                    
+                                    <dt>&lt;main&gt;</dt>
+                                    <dd>Primary page content</dd>
+                                    
+                                    <dt>&lt;footer&gt;</dt>
+                                    <dd>Page or section conclusion</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>📄 Content Elements</h3>
+                                <dl>
+                                    <dt>&lt;article&gt;</dt>
+                                    <dd>Standalone, distributable content</dd>
+                                    
+                                    <dt>&lt;section&gt;</dt>
+                                    <dd>Thematic content groupings</dd>
+                                    
+                                    <dt>&lt;aside&gt;</dt>
+                                    <dd>Complementary sidebar content</dd>
+                                    
+                                    <dt>&lt;figure&gt;</dt>
+                                    <dd>Self-contained media with captions</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-completion">
+                            <div class="completion-message">
+                                <h3>🎉 Semantic Structure Master!</h3>
+                                <p>You can now create well-structured, accessible, and SEO-friendly web pages using HTML5 semantic elements!</p>
+                            </div>
+                            
+                            <div class="completion-actions">
+                                <button class="btn btn-primary btn-large" onclick="markLessonComplete()">
+                                    ✓ Mark Lesson Complete
+                                </button>
+                                <a href="lesson09.html" class="btn btn-outline btn-large">
+                                    Next: HTML5 Features →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div id="notes-panel" class="notes-panel">
+        <div class="notes-header">
+            <h3>📝 My Notes</h3>
+            <button class="close-btn" onclick="toggleNotes()">&times;</button>
+        </div>
+        <div class="notes-content">
+            <textarea id="notes-textarea" placeholder="Take notes about HTML5 semantic elements..."></textarea>
+        </div>
+        <div class="notes-footer">
+            <button class="btn btn-sm btn-outline" onclick="clearNotes()">Clear</button>
+            <button class="btn btn-sm btn-primary" onclick="saveNotes()">Save</button>
+        </div>
+    </div>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        let currentProgress = 0;
+        let totalSections = 7;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLesson();
+            initializeCodeEditor();
+            loadNotes();
+            trackProgress();
+        });
+        
+        function initializeLesson() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        updateActiveTocLink(id);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function updateActiveTocLink(activeId) {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        function initializeCodeEditor() {
+            const textarea = document.getElementById('html-editor');
+            if (!textarea) return;
+            
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: 'htmlmixed',
+                theme: 'default',
+                lineNumbers: true,
+                autoCloseTags: true,
+                autoCloseBrackets: true,
+                indentUnit: 2,
+                tabSize: 2,
+                lineWrapping: true
+            });
+            
+            editor.on('change', function() {
+                updatePreview();
+            });
+            
+            window.htmlEditor = editor;
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            if (!window.htmlEditor) return;
+            
+            const code = window.htmlEditor.getValue();
+            const previewFrame = document.getElementById('preview-frame');
+            if (!previewFrame) return;
+            
+            const blob = new Blob([code], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            previewFrame.src = url;
+        }
+        
+        function resetCode() {
+            const defaultCode = document.getElementById('html-editor').defaultValue;
+            if (window.htmlEditor) {
+                window.htmlEditor.setValue(defaultCode);
+                updatePreview();
+            }
+        }
+        
+        function trackProgress() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const progressFill = document.getElementById('lesson-progress');
+            const progressText = document.getElementById('progress-text');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        currentProgress++;
+                        const percentage = Math.min((currentProgress / totalSections) * 100, 100);
+                        progressFill.style.width = percentage + '%';
+                        progressText.textContent = Math.round(percentage) + '% Complete';
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+        }
+        
+        function saveNotes() {
+            const notes = document.getElementById('notes-textarea').value;
+            localStorage.setItem('lesson8-notes', notes);
+            showNotification('Notes saved!');
+        }
+        
+        function loadNotes() {
+            const savedNotes = localStorage.getItem('lesson8-notes');
+            if (savedNotes) {
+                document.getElementById('notes-textarea').value = savedNotes;
+            }
+        }
+        
+        function clearNotes() {
+            document.getElementById('notes-textarea').value = '';
+            localStorage.removeItem('lesson8-notes');
+            showNotification('Notes cleared!');
+        }
+        
+        function markComplete() {
+            if (window.HTMLCourse) {
+                window.HTMLCourse.markLessonComplete(8);
+            }
+            showNotification('Lesson 8 completed! 🎉');
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        function copyCode(button) {
+            const codeBlock = button.parentNode.nextElementSibling.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+        
+        function showExerciseSolution(exerciseNumber) {
+            alert(`Exercise ${exerciseNumber} solution would be shown here in a complete implementation.`);
+        }
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab-btn')) {
+                const tabId = e.target.getAttribute('data-tab');
+                const tabs = e.target.parentNode.querySelectorAll('.tab-btn');
+                const contents = e.target.closest('.code-playground').querySelectorAll('.tab-content');
+                
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                
+                e.target.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

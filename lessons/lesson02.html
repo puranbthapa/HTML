@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: HTML Document Structure - HTML Course</title>
+    <meta name="description" content="Learn about HTML document structure, DOCTYPE declarations, head elements, and metadata for proper web page setup.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/lesson.css">
+    
+    <!-- Code Editor -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="container">
+            <nav class="lesson-nav">
+                <a href="../index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    Back to Course
+                </a>
+                
+                <div class="lesson-info">
+                    <span class="lesson-number">02</span>
+                    <h1 class="lesson-title">HTML Document Structure</h1>
+                </div>
+                
+                <div class="lesson-actions">
+                    <button class="btn btn-outline btn-sm" onclick="toggleNotes()">
+                        📝 Notes
+                    </button>
+                    <button class="btn btn-primary btn-sm" onclick="markComplete()">
+                        ✓ Complete
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <div class="container">
+            <div class="lesson-layout">
+                <aside class="lesson-sidebar">
+                    <div class="sidebar-content">
+                        <h3>Contents</h3>
+                        <nav class="lesson-toc">
+                            <a href="#doctype" class="toc-link">DOCTYPE Declaration</a>
+                            <a href="#html-element" class="toc-link">HTML Root Element</a>
+                            <a href="#head-section" class="toc-link">Head Section</a>
+                            <a href="#metadata" class="toc-link">Metadata Elements</a>
+                            <a href="#body-section" class="toc-link">Body Section</a>
+                            <a href="#validation" class="toc-link">Document Validation</a>
+                            <a href="#exercises" class="toc-link">Practice Exercises</a>
+                            <a href="#summary" class="toc-link">Summary</a>
+                        </nav>
+                        
+                        <div class="lesson-progress">
+                            <h4>Lesson Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="lesson-progress"></div>
+                            </div>
+                            <span class="progress-text" id="progress-text">0% Complete</span>
+                        </div>
+                        
+                        <div class="lesson-navigation">
+                            <a href="lesson01.html" class="nav-btn prev-lesson">
+                                ← Previous Lesson
+                            </a>
+                            <a href="lesson03.html" class="nav-btn next-lesson">
+                                Next Lesson →
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <article class="lesson-main">
+                    <section class="lesson-section" id="introduction">
+                        <div class="section-header">
+                            <h2>Understanding HTML Document Structure</h2>
+                            <span class="section-duration">⏱️ 20 minutes</span>
+                        </div>
+                        
+                        <p class="lead">
+                            Every HTML document follows a specific structure that browsers understand. In this lesson, 
+                            you'll learn about the essential parts of an HTML document and how they work together.
+                        </p>
+                        
+                        <div class="learning-objectives">
+                            <h3>🎯 Learning Objectives</h3>
+                            <ul>
+                                <li>Understand the purpose of DOCTYPE declarations</li>
+                                <li>Learn about the HTML root element and language attributes</li>
+                                <li>Master the head section and its metadata elements</li>
+                                <li>Explore character encoding and viewport settings</li>
+                                <li>Understand the body section and its role</li>
+                                <li>Practice creating properly structured HTML documents</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="doctype">
+                        <h2>DOCTYPE Declaration</h2>
+                        
+                        <div class="concept-box">
+                            <h3>💡 Key Concept</h3>
+                            <p>
+                                The <strong>DOCTYPE declaration</strong> tells the browser which version of HTML 
+                                to use when rendering the page. It must be the very first thing in your HTML document.
+                            </p>
+                        </div>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">DOCTYPE Declaration</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!DOCTYPE html&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Why DOCTYPE Matters</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>✅ With DOCTYPE</h4>
+                                <ul>
+                                    <li>Browser uses standards mode</li>
+                                    <li>Consistent rendering</li>
+                                    <li>Modern HTML5 features work</li>
+                                    <li>CSS behaves predictably</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>❌ Without DOCTYPE</h4>
+                                <ul>
+                                    <li>Browser uses quirks mode</li>
+                                    <li>Unpredictable rendering</li>
+                                    <li>Legacy behavior</li>
+                                    <li>CSS may not work properly</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h3>🔍 Historical Context</h3>
+                            <p>
+                                In the past, DOCTYPE declarations were much longer and more complex. 
+                                HTML5 simplified this to just <code>&lt;!DOCTYPE html&gt;</code>, 
+                                making it easier to remember and type correctly.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="html-element">
+                        <h2>The HTML Root Element</h2>
+                        
+                        <p>The <code>&lt;html&gt;</code> element is the root container for all content on your webpage.</p>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">HTML Root Element with Language</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;html lang="en"&gt;
+    &lt;!-- All your webpage content goes here --&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Language Attributes</h3>
+                        <p>The <code>lang</code> attribute is crucial for accessibility and SEO:</p>
+                        
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>lang="en"</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>English Language</h4>
+                                    <p>Tells browsers and screen readers the page is in English</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>lang="hi"</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Hindi Language</h4>
+                                    <p>Use for Hindi content pages</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>lang="en-IN"</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Regional Variant</h4>
+                                    <p>English as used in India (includes regional preferences)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h3>🌍 Why Language Matters</h3>
+                            <ul>
+                                <li><strong>Screen readers</strong> can pronounce words correctly</li>
+                                <li><strong>Search engines</strong> understand your content's language</li>
+                                <li><strong>Browsers</strong> can offer translation services</li>
+                                <li><strong>Spell checkers</strong> use the correct dictionary</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="head-section">
+                        <h2>The Head Section</h2>
+                        
+                        <p>The <code>&lt;head&gt;</code> section contains metadata about your document - information for browsers and search engines, not visible to users.</p>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Complete Head Section Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Amazing Webpage&lt;/title&gt;
+    &lt;meta name="description" content="A brief description of my webpage"&gt;
+    &lt;meta name="keywords" content="HTML, web development, tutorial"&gt;
+    &lt;meta name="author" content="Your Name"&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;link rel="icon" href="favicon.ico"&gt;
+&lt;/head&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Essential Head Elements</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;meta charset="UTF-8"&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Character Encoding</h4>
+                                    <p>Tells the browser how to interpret text characters. UTF-8 supports all languages and symbols.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;title&gt;Page Title&lt;/title&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Page Title</h4>
+                                    <p>Appears in browser tabs, search results, and bookmarks. Keep it descriptive but concise.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;meta name="viewport"...&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Viewport Settings</h4>
+                                    <p>Essential for responsive design on mobile devices. Controls how the page scales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="metadata">
+                        <h2>Metadata Elements Deep Dive</h2>
+                        
+                        <h3>Character Encoding</h3>
+                        <p>Character encoding determines how text is stored and displayed:</p>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>🌟 UTF-8 (Recommended)</h4>
+                                <ul>
+                                    <li>Supports all languages</li>
+                                    <li>Backward compatible with ASCII</li>
+                                    <li>Widely supported</li>
+                                    <li>Web standard</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>📜 Other Encodings</h4>
+                                <ul>
+                                    <li>ISO-8859-1 (Latin-1)</li>
+                                    <li>Windows-1252</li>
+                                    <li>Limited character support</li>
+                                    <li>Legacy systems only</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3>Viewport Meta Tag</h3>
+                        <p>The viewport meta tag is crucial for mobile-responsive websites:</p>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Viewport Meta Tag Breakdown</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;meta name="viewport" 
+      content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                        </div>
+                        
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>width=device-width</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Device Width</h4>
+                                    <p>Sets the viewport width to match the device's screen width</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>initial-scale=1.0</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Initial Zoom</h4>
+                                    <p>Sets the initial zoom level when the page loads (1.0 = 100%)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>SEO Meta Tags</h3>
+                        <p>Help search engines understand your content:</p>
+                        
+                        <div class="code-playground">
+                            <div class="playground-header">
+                                <h3>Try SEO Meta Tags</h3>
+                                <div class="playground-tabs">
+                                    <button class="tab-btn active" data-tab="html">HTML</button>
+                                    <button class="tab-btn" data-tab="preview">Preview</button>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-content">
+                                <div class="tab-content active" id="html-tab">
+                                    <textarea id="html-editor" class="code-editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Learn HTML - Complete Beginner's Guide&lt;/title&gt;
+    &lt;meta name="description" content="Master HTML from basics to advanced with our comprehensive tutorial. Perfect for beginners and students."&gt;
+    &lt;meta name="keywords" content="HTML, tutorial, web development, beginner, guide"&gt;
+    &lt;meta name="author" content="HTML Course Team"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to HTML Learning!&lt;/h1&gt;
+    &lt;p&gt;This page demonstrates proper document structure with SEO-friendly metadata.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                                </div>
+                                
+                                <div class="tab-content" id="preview-tab">
+                                    <iframe id="preview-frame" class="preview-frame" title="HTML Preview"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-actions">
+                                <button class="btn btn-primary" onclick="updatePreview()">Update Preview</button>
+                                <button class="btn btn-outline" onclick="resetCode()">Reset Code</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="body-section">
+                        <h2>The Body Section</h2>
+                        
+                        <p>The <code>&lt;body&gt;</code> element contains all the visible content of your webpage.</p>
+                        
+                        <div class="concept-box">
+                            <h3>💡 Body Element Purpose</h3>
+                            <p>
+                                Everything users see and interact with on your webpage goes inside the body element - 
+                                text, images, links, forms, and all other visible content.
+                            </p>
+                        </div>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Body Structure Example</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;body&gt;
+    &lt;!-- Navigation --&gt;
+    &lt;nav&gt;
+        &lt;a href="#home"&gt;Home&lt;/a&gt;
+        &lt;a href="#about"&gt;About&lt;/a&gt;
+        &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+    
+    &lt;!-- Main content --&gt;
+    &lt;main&gt;
+        &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+        &lt;p&gt;This is the main content area.&lt;/p&gt;
+    &lt;/main&gt;
+    
+    &lt;!-- Footer --&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2024 My Website&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Complete Document Structure</h3>
+                        <div class="process-flow">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <h4>DOCTYPE</h4>
+                                <p>Declares HTML5 document type</p>
+                            </div>
+                            
+                            <div class="process-arrow">↓</div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <h4>HTML Element</h4>
+                                <p>Root container with language</p>
+                            </div>
+                            
+                            <div class="process-arrow">↓</div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <h4>Head Section</h4>
+                                <p>Metadata and resources</p>
+                            </div>
+                            
+                            <div class="process-arrow">↓</div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <h4>Body Section</h4>
+                                <p>Visible page content</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="validation">
+                        <h2>Document Validation</h2>
+                        
+                        <p>Proper HTML structure helps browsers render your pages correctly and improves accessibility.</p>
+                        
+                        <h3>Common Structure Mistakes</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>❌ Incorrect Structure</h4>
+                                <pre style="background: #fee; color: #c00; padding: 10px; border-radius: 5px; font-size: 12px;"><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Missing DOCTYPE&lt;/title&gt;
+&lt;head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Unclosed head tag&lt;/h1&gt;
+&lt;/body&gt;</code></pre>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>✅ Correct Structure</h4>
+                                <pre style="background: #efe; color: #060; padding: 10px; border-radius: 5px; font-size: 12px;"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Proper Structure&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Well-formed HTML&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h3>🛠️ Validation Tools</h3>
+                            <p>Use the W3C HTML Validator to check your HTML structure:</p>
+                            <ul>
+                                <li><strong>Online:</strong> validator.w3.org</li>
+                                <li><strong>Browser Extensions:</strong> HTML Validator plugins</li>
+                                <li><strong>Code Editors:</strong> Built-in validation in VS Code</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="exercises">
+                        <h2>Practice Exercises</h2>
+                        
+                        <div class="exercises-grid">
+                            <div class="exercise-card">
+                                <h3>Exercise 1: Basic Document Structure</h3>
+                                <p>Create a complete HTML document with proper structure:</p>
+                                <ul>
+                                    <li>DOCTYPE declaration</li>
+                                    <li>HTML element with English language</li>
+                                    <li>Head with charset, viewport, and title</li>
+                                    <li>Body with a welcome message</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(1)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 2: SEO-Optimized Page</h3>
+                                <p>Create an HTML page optimized for search engines:</p>
+                                <ul>
+                                    <li>Descriptive title (50-60 characters)</li>
+                                    <li>Meta description (150-160 characters)</li>
+                                    <li>Author and keywords meta tags</li>
+                                    <li>Proper language attribute</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(2)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 3: Mobile-Friendly Document</h3>
+                                <p>Build a mobile-responsive HTML document:</p>
+                                <ul>
+                                    <li>Proper viewport meta tag</li>
+                                    <li>UTF-8 character encoding</li>
+                                    <li>Semantic HTML structure</li>
+                                    <li>Basic content with headings</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(3)">Show Solution</button>
+                            </div>
+                        </div>
+                        
+                        <div id="exercise-solutions" class="exercise-solutions-hidden">
+                            <div class="solution" id="solution-1">
+                                <h4>Solution 1: Basic Document Structure</h4>
+                                <div class="code-example">
+                                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Proper HTML Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website!&lt;/h1&gt;
+    &lt;p&gt;This page demonstrates proper HTML document structure.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="solution" id="solution-2">
+                                <h4>Solution 2: SEO-Optimized Page</h4>
+                                <div class="code-example">
+                                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Learn Web Development - Complete HTML Tutorial&lt;/title&gt;
+    &lt;meta name="description" content="Master HTML from basics to advanced concepts with our comprehensive tutorial. Perfect for beginners and students learning web development."&gt;
+    &lt;meta name="keywords" content="HTML tutorial, web development, learn HTML, beginner guide, programming"&gt;
+    &lt;meta name="author" content="Web Development Academy"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Complete HTML Tutorial&lt;/h1&gt;
+    &lt;p&gt;Learn to build amazing websites with HTML!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="solution" id="solution-3">
+                                <h4>Solution 3: Mobile-Friendly Document</h4>
+                                <div class="code-example">
+                                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mobile-Friendly Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Mobile-Friendly Design&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;h2&gt;About This Page&lt;/h2&gt;
+        &lt;p&gt;This page is optimized for mobile devices with proper viewport settings.&lt;/p&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;p&gt;Created with mobile-first design principles.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="summary">
+                        <h2>Lesson Summary</h2>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>🎯 What You Learned</h3>
+                                <ul>
+                                    <li>DOCTYPE declares HTML version for browsers</li>
+                                    <li>HTML element is the root container</li>
+                                    <li>Head contains metadata, not visible content</li>
+                                    <li>Body contains all visible page content</li>
+                                    <li>Character encoding ensures text displays correctly</li>
+                                    <li>Viewport meta tag enables mobile responsiveness</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>🔑 Key Elements</h3>
+                                <dl>
+                                    <dt>&lt;!DOCTYPE html&gt;</dt>
+                                    <dd>HTML5 document declaration</dd>
+                                    
+                                    <dt>&lt;html lang="en"&gt;</dt>
+                                    <dd>Root element with language</dd>
+                                    
+                                    <dt>&lt;meta charset="UTF-8"&gt;</dt>
+                                    <dd>Character encoding for text</dd>
+                                    
+                                    <dt>&lt;meta name="viewport"&gt;</dt>
+                                    <dd>Mobile responsive settings</dd>
+                                    
+                                    <dt>&lt;title&gt;</dt>
+                                    <dd>Page title for browsers</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>📝 Best Practices</h3>
+                                <ul>
+                                    <li>Always include DOCTYPE declaration</li>
+                                    <li>Set appropriate language attribute</li>
+                                    <li>Use UTF-8 character encoding</li>
+                                    <li>Include viewport meta for mobile</li>
+                                    <li>Write descriptive page titles</li>
+                                    <li>Validate your HTML structure</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-completion">
+                            <div class="completion-message">
+                                <h3>🎉 Well Done!</h3>
+                                <p>You now understand HTML document structure and can create properly formatted HTML pages with appropriate metadata!</p>
+                            </div>
+                            
+                            <div class="completion-actions">
+                                <button class="btn btn-primary btn-large" onclick="markLessonComplete()">
+                                    ✓ Mark Lesson Complete
+                                </button>
+                                <a href="lesson03.html" class="btn btn-outline btn-large">
+                                    Next: Text Elements →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div id="notes-panel" class="notes-panel">
+        <div class="notes-header">
+            <h3>📝 My Notes</h3>
+            <button class="close-btn" onclick="toggleNotes()">&times;</button>
+        </div>
+        <div class="notes-content">
+            <textarea id="notes-textarea" placeholder="Take notes about HTML document structure..."></textarea>
+        </div>
+        <div class="notes-footer">
+            <button class="btn btn-sm btn-outline" onclick="clearNotes()">Clear</button>
+            <button class="btn btn-sm btn-primary" onclick="saveNotes()">Save</button>
+        </div>
+    </div>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        let currentProgress = 0;
+        let totalSections = 8;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLesson();
+            initializeCodeEditor();
+            loadNotes();
+            trackProgress();
+        });
+        
+        function initializeLesson() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        updateActiveTocLink(id);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function updateActiveTocLink(activeId) {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        function initializeCodeEditor() {
+            const textarea = document.getElementById('html-editor');
+            if (!textarea) return;
+            
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: 'htmlmixed',
+                theme: 'default',
+                lineNumbers: true,
+                autoCloseTags: true,
+                autoCloseBrackets: true,
+                indentUnit: 2,
+                tabSize: 2,
+                lineWrapping: true
+            });
+            
+            editor.on('change', function() {
+                updatePreview();
+            });
+            
+            window.htmlEditor = editor;
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            if (!window.htmlEditor) return;
+            
+            const code = window.htmlEditor.getValue();
+            const previewFrame = document.getElementById('preview-frame');
+            if (!previewFrame) return;
+            
+            const blob = new Blob([code], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            previewFrame.src = url;
+        }
+        
+        function resetCode() {
+            const defaultCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML - Complete Beginner's Guide</title>
+    <meta name="description" content="Master HTML from basics to advanced with our comprehensive tutorial. Perfect for beginners and students.">
+    <meta name="keywords" content="HTML, tutorial, web development, beginner, guide">
+    <meta name="author" content="HTML Course Team">
+</head>
+<body>
+    <h1>Welcome to HTML Learning!</h1>
+    <p>This page demonstrates proper document structure with SEO-friendly metadata.</p>
+</body>
+</html>`;
+            
+            if (window.htmlEditor) {
+                window.htmlEditor.setValue(defaultCode);
+                updatePreview();
+            }
+        }
+        
+        function trackProgress() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const progressFill = document.getElementById('lesson-progress');
+            const progressText = document.getElementById('progress-text');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        currentProgress++;
+                        const percentage = Math.min((currentProgress / totalSections) * 100, 100);
+                        progressFill.style.width = percentage + '%';
+                        progressText.textContent = Math.round(percentage) + '% Complete';
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+        }
+        
+        function saveNotes() {
+            const notes = document.getElementById('notes-textarea').value;
+            localStorage.setItem('lesson2-notes', notes);
+            showNotification('Notes saved!');
+        }
+        
+        function loadNotes() {
+            const savedNotes = localStorage.getItem('lesson2-notes');
+            if (savedNotes) {
+                document.getElementById('notes-textarea').value = savedNotes;
+            }
+        }
+        
+        function clearNotes() {
+            document.getElementById('notes-textarea').value = '';
+            localStorage.removeItem('lesson2-notes');
+            showNotification('Notes cleared!');
+        }
+        
+        function markComplete() {
+            if (window.HTMLCourse) {
+                window.HTMLCourse.markLessonComplete(2);
+            }
+            showNotification('Lesson 2 completed! 🎉');
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        function copyCode(button) {
+            const codeBlock = button.parentNode.nextElementSibling.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+        
+        function showExerciseSolution(exerciseNumber) {
+            const solutions = document.getElementById('exercise-solutions');
+            const solution = document.getElementById(`solution-${exerciseNumber}`);
+            
+            solutions.classList.remove('exercise-solutions-hidden');
+            solution.style.display = 'block';
+            solution.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab-btn')) {
+                const tabId = e.target.getAttribute('data-tab');
+                const tabs = e.target.parentNode.querySelectorAll('.tab-btn');
+                const contents = e.target.closest('.code-playground').querySelectorAll('.tab-content');
+                
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                
+                e.target.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

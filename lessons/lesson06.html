@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: Lists and Tables - HTML Course</title>
+    <meta name="description" content="Master HTML lists and tables for organizing and presenting structured data effectively.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/lesson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="container">
+            <nav class="lesson-nav">
+                <a href="../index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    Back to Course
+                </a>
+                <div class="lesson-info">
+                    <span class="lesson-number">06</span>
+                    <h1 class="lesson-title">Lists and Tables</h1>
+                </div>
+                <div class="lesson-actions">
+                    <button class="btn btn-outline btn-sm" onclick="toggleNotes()">📝 Notes</button>
+                    <button class="btn btn-primary btn-sm" onclick="markComplete()">✓ Complete</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <div class="container">
+            <div class="lesson-layout">
+                <aside class="lesson-sidebar">
+                    <div class="sidebar-content">
+                        <h3>Contents</h3>
+                        <nav class="lesson-toc">
+                            <a href="#lists" class="toc-link">HTML Lists</a>
+                            <a href="#nested-lists" class="toc-link">Nested Lists</a>
+                            <a href="#tables" class="toc-link">HTML Tables</a>
+                            <a href="#table-structure" class="toc-link">Table Structure</a>
+                            <a href="#accessibility" class="toc-link">Accessibility</a>
+                            <a href="#exercises" class="toc-link">Practice Exercises</a>
+                            <a href="#summary" class="toc-link">Summary</a>
+                        </nav>
+                        
+                        <div class="lesson-progress">
+                            <h4>Lesson Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="lesson-progress"></div>
+                            </div>
+                            <span class="progress-text" id="progress-text">0% Complete</span>
+                        </div>
+                        
+                        <div class="lesson-navigation">
+                            <a href="lesson05.html" class="nav-btn prev-lesson">← Previous Lesson</a>
+                            <a href="lesson07.html" class="nav-btn next-lesson">Next Lesson →</a>
+                        </div>
+                    </div>
+                </aside>
+
+                <article class="lesson-main">
+                    <section class="lesson-section" id="introduction">
+                        <div class="section-header">
+                            <h2>Organizing Content with Lists and Tables</h2>
+                            <span class="section-duration">⏱️ 30 minutes</span>
+                        </div>
+                        
+                        <p class="lead">
+                            Lists and tables are essential for organizing and presenting structured information 
+                            clearly. Learn to create different types of lists and data tables that are both 
+                            functional and accessible.
+                        </p>
+                        
+                        <div class="learning-objectives">
+                            <h3>🎯 Learning Objectives</h3>
+                            <ul>
+                                <li>Create ordered, unordered, and description lists</li>
+                                <li>Build nested list structures</li>
+                                <li>Construct accessible HTML tables</li>
+                                <li>Use proper table structure elements</li>
+                                <li>Implement table headers and captions</li>
+                                <li>Apply accessibility best practices for data presentation</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="lists">
+                        <h2>HTML Lists</h2>
+                        
+                        <div class="concept-box">
+                            <h3>💡 Types of Lists</h3>
+                            <p>
+                                HTML provides three main types of lists: unordered lists for items without 
+                                specific order, ordered lists for sequential items, and description lists 
+                                for term-definition pairs.
+                            </p>
+                        </div>
+                        
+                        <h3>Unordered Lists</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Unordered List (&lt;ul&gt;)</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;ul&gt;
+    &lt;li&gt;Apples&lt;/li&gt;
+    &lt;li&gt;Oranges&lt;/li&gt;
+    &lt;li&gt;Bananas&lt;/li&gt;
+    &lt;li&gt;Grapes&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Ordered Lists</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Ordered List (&lt;ol&gt;)</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;ol&gt;
+    &lt;li&gt;Preheat oven to 350°F&lt;/li&gt;
+    &lt;li&gt;Mix flour and sugar&lt;/li&gt;
+    &lt;li&gt;Add eggs and milk&lt;/li&gt;
+    &lt;li&gt;Bake for 30 minutes&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Ordered List Attributes</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Custom Numbering</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Start from number 5 --&gt;
+&lt;ol start="5"&gt;
+    &lt;li&gt;Fifth item&lt;/li&gt;
+    &lt;li&gt;Sixth item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Reverse numbering --&gt;
+&lt;ol reversed&gt;
+    &lt;li&gt;Last step&lt;/li&gt;
+    &lt;li&gt;Second to last&lt;/li&gt;
+    &lt;li&gt;First step&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Different number types --&gt;
+&lt;ol type="a"&gt;
+    &lt;li&gt;Lowercase letters&lt;/li&gt;
+    &lt;li&gt;Continue alphabetically&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Description Lists</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Description List (&lt;dl&gt;)</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+    
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;Programming language for web interactivity&lt;/dd&gt;
+    &lt;dd&gt;Can run on browsers and servers&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>📝 Unordered Lists</h4>
+                                <ul>
+                                    <li>Use for non-sequential items</li>
+                                    <li>Shopping lists, features, menus</li>
+                                    <li>Default: bullet points</li>
+                                    <li>Order doesn't matter</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🔢 Ordered Lists</h4>
+                                <ul>
+                                    <li>Use for sequential items</li>
+                                    <li>Instructions, rankings, steps</li>
+                                    <li>Default: numbers</li>
+                                    <li>Order is important</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>📚 Description Lists</h4>
+                                <ul>
+                                    <li>Use for term-definition pairs</li>
+                                    <li>Glossaries, FAQs, metadata</li>
+                                    <li>dt = term, dd = description</li>
+                                    <li>Multiple descriptions allowed</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="nested-lists">
+                        <h2>Nested Lists</h2>
+                        
+                        <p>Lists can be nested inside each other to create hierarchical structures like outlines or site maps.</p>
+                        
+                        <div class="code-playground">
+                            <div class="playground-header">
+                                <h3>Build a Nested List Structure</h3>
+                                <div class="playground-tabs">
+                                    <button class="tab-btn active" data-tab="html">HTML</button>
+                                    <button class="tab-btn" data-tab="preview">Preview</button>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-content">
+                                <div class="tab-content active" id="html-tab">
+                                    <textarea id="html-editor" class="code-editor" title="HTML Editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Lists Demo&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+        .list-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        ul, ol {
+            margin: 15px 0;
+        }
+        li {
+            margin: 8px 0;
+        }
+        dl {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        dt {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 15px;
+        }
+        dt:first-child {
+            margin-top: 0;
+        }
+        dd {
+            margin: 5px 0 0 20px;
+            color: #555;
+        }
+        .nested-example {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .nested-example h3 {
+            margin-top: 0;
+            color: white;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;📋 HTML Lists Demonstration&lt;/h1&gt;
+    
+    &lt;!-- Nested Lists Example --&gt;
+    &lt;div class="list-container nested-example"&gt;
+        &lt;h3&gt;🌐 Web Development Course Outline&lt;/h3&gt;
+        &lt;ol&gt;
+            &lt;li&gt;Frontend Development
+                &lt;ul&gt;
+                    &lt;li&gt;HTML Fundamentals
+                        &lt;ol&gt;
+                            &lt;li&gt;Document Structure&lt;/li&gt;
+                            &lt;li&gt;Text Elements&lt;/li&gt;
+                            &lt;li&gt;Links and Navigation&lt;/li&gt;
+                            &lt;li&gt;Images and Media&lt;/li&gt;
+                        &lt;/ol&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;CSS Styling
+                        &lt;ol&gt;
+                            &lt;li&gt;Selectors and Properties&lt;/li&gt;
+                            &lt;li&gt;Layout Techniques&lt;/li&gt;
+                            &lt;li&gt;Responsive Design&lt;/li&gt;
+                        &lt;/ol&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;JavaScript Programming&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;Backend Development
+                &lt;ul&gt;
+                    &lt;li&gt;Server-side Languages&lt;/li&gt;
+                    &lt;li&gt;Databases&lt;/li&gt;
+                    &lt;li&gt;APIs and Web Services&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Shopping List Example --&gt;
+    &lt;div class="list-container"&gt;
+        &lt;h2&gt;🛒 Shopping List&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Groceries
+                &lt;ul&gt;
+                    &lt;li&gt;Fruits
+                        &lt;ul&gt;
+                            &lt;li&gt;Apples (Red Delicious)&lt;/li&gt;
+                            &lt;li&gt;Bananas (Organic)&lt;/li&gt;
+                            &lt;li&gt;Orange juice&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;Vegetables
+                        &lt;ul&gt;
+                            &lt;li&gt;Carrots&lt;/li&gt;
+                            &lt;li&gt;Broccoli&lt;/li&gt;
+                            &lt;li&gt;Spinach leaves&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;Household Items
+                &lt;ul&gt;
+                    &lt;li&gt;Cleaning supplies&lt;/li&gt;
+                    &lt;li&gt;Paper towels&lt;/li&gt;
+                    &lt;li&gt;Light bulbs&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Recipe Steps --&gt;
+    &lt;div class="list-container"&gt;
+        &lt;h2&gt;👨‍🍳 Chocolate Chip Cookies Recipe&lt;/h2&gt;
+        &lt;ol&gt;
+            &lt;li&gt;Prepare ingredients
+                &lt;ul&gt;
+                    &lt;li&gt;2 cups flour&lt;/li&gt;
+                    &lt;li&gt;1 cup brown sugar&lt;/li&gt;
+                    &lt;li&gt;1/2 cup butter&lt;/li&gt;
+                    &lt;li&gt;1 cup chocolate chips&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;Mix dry ingredients&lt;/li&gt;
+            &lt;li&gt;Combine wet ingredients&lt;/li&gt;
+            &lt;li&gt;Fold in chocolate chips&lt;/li&gt;
+            &lt;li&gt;Bake at 350°F
+                &lt;ol type="a"&gt;
+                    &lt;li&gt;Preheat oven&lt;/li&gt;
+                    &lt;li&gt;Place dough on baking sheet&lt;/li&gt;
+                    &lt;li&gt;Bake for 12-15 minutes&lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Definition List --&gt;
+    &lt;div class="list-container"&gt;
+        &lt;h2&gt;💻 Web Development Glossary&lt;/h2&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;HTML&lt;/dt&gt;
+            &lt;dd&gt;HyperText Markup Language - the standard markup language for web pages&lt;/dd&gt;
+            
+            &lt;dt&gt;CSS&lt;/dt&gt;
+            &lt;dd&gt;Cascading Style Sheets - used for styling web pages&lt;/dd&gt;
+            &lt;dd&gt;Controls layout, colors, fonts, and visual presentation&lt;/dd&gt;
+            
+            &lt;dt&gt;JavaScript&lt;/dt&gt;
+            &lt;dd&gt;Programming language for web interactivity&lt;/dd&gt;
+            &lt;dd&gt;Can run in browsers and on servers (Node.js)&lt;/dd&gt;
+            
+            &lt;dt&gt;Responsive Design&lt;/dt&gt;
+            &lt;dd&gt;Design approach that makes web pages render well on various devices&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                                </div>
+                                
+                                <div class="tab-content" id="preview-tab">
+                                    <iframe id="preview-frame" class="preview-frame" title="Lists Preview"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-actions">
+                                <button class="btn btn-primary" onclick="updatePreview()">Update Preview</button>
+                                <button class="btn btn-outline" onclick="resetCode()">Reset Code</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="tables">
+                        <h2>HTML Tables</h2>
+                        
+                        <div class="concept-box">
+                            <h3>💡 When to Use Tables</h3>
+                            <p>
+                                Tables are for displaying tabular data - information that has relationships 
+                                between rows and columns. Don't use tables for layout purposes; use CSS instead.
+                            </p>
+                        </div>
+                        
+                        <h3>Basic Table Structure</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Simple Table</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John Doe&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jane Smith&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+        &lt;td&gt;Los Angeles&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Table Elements</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;table&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Table Container</h4>
+                                    <p>Wraps the entire table structure</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;tr&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Table Row</h4>
+                                    <p>Contains table cells horizontally</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;th&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Table Header</h4>
+                                    <p>Header cell (bold, centered by default)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;td&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Table Data</h4>
+                                    <p>Regular data cell</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="table-structure">
+                        <h2>Advanced Table Structure</h2>
+                        
+                        <h3>Semantic Table Elements</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Complete Table Structure</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;table&gt;
+    &lt;caption&gt;Student Grades - Fall 2024&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Student Name&lt;/th&gt;
+            &lt;th&gt;Math&lt;/th&gt;
+            &lt;th&gt;Science&lt;/th&gt;
+            &lt;th&gt;English&lt;/th&gt;
+            &lt;th&gt;Average&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Alice Johnson&lt;/td&gt;
+            &lt;td&gt;92&lt;/td&gt;
+            &lt;td&gt;88&lt;/td&gt;
+            &lt;td&gt;95&lt;/td&gt;
+            &lt;td&gt;91.7&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bob Wilson&lt;/td&gt;
+            &lt;td&gt;78&lt;/td&gt;
+            &lt;td&gt;82&lt;/td&gt;
+            &lt;td&gt;79&lt;/td&gt;
+            &lt;td&gt;79.7&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Class Average&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+            &lt;td&gt;87&lt;/td&gt;
+            &lt;td&gt;85.7&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Column and Row Spanning</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Colspan and Rowspan</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th colspan="2"&gt;Product Information&lt;/th&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Electronics&lt;/td&gt;
+        &lt;td&gt;Laptop&lt;/td&gt;
+        &lt;td&gt;$999&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Smartphone&lt;/td&gt;
+        &lt;td&gt;$699&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>📋 Table Structure</h4>
+                                <ul>
+                                    <li><strong>&lt;caption&gt;</strong>: Table title</li>
+                                    <li><strong>&lt;thead&gt;</strong>: Header section</li>
+                                    <li><strong>&lt;tbody&gt;</strong>: Body content</li>
+                                    <li><strong>&lt;tfoot&gt;</strong>: Footer summary</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🔗 Cell Attributes</h4>
+                                <ul>
+                                    <li><strong>colspan</strong>: Span multiple columns</li>
+                                    <li><strong>rowspan</strong>: Span multiple rows</li>
+                                    <li><strong>scope</strong>: Define header scope</li>
+                                    <li><strong>headers</strong>: Associate with headers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="accessibility">
+                        <h2>Accessibility Best Practices</h2>
+                        
+                        <h3>Table Accessibility</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Accessible Table</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;table&gt;
+    &lt;caption&gt;Monthly Sales Report by Region&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Region&lt;/th&gt;
+            &lt;th scope="col"&gt;January&lt;/th&gt;
+            &lt;th scope="col"&gt;February&lt;/th&gt;
+            &lt;th scope="col"&gt;March&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;North&lt;/th&gt;
+            &lt;td&gt;$12,000&lt;/td&gt;
+            &lt;td&gt;$15,000&lt;/td&gt;
+            &lt;td&gt;$18,000&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;South&lt;/th&gt;
+            &lt;td&gt;$10,000&lt;/td&gt;
+            &lt;td&gt;$13,000&lt;/td&gt;
+            &lt;td&gt;$16,000&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                        
+                        <h3>List Accessibility</h3>
+                        <div class="info-box">
+                            <h3>♿ Accessibility Guidelines</h3>
+                            <ul>
+                                <li><strong>Semantic markup:</strong> Use appropriate list types</li>
+                                <li><strong>Logical structure:</strong> Maintain hierarchical order</li>
+                                <li><strong>Clear content:</strong> Write descriptive list items</li>
+                                <li><strong>Table captions:</strong> Always provide context for tables</li>
+                                <li><strong>Header scope:</strong> Define relationships clearly</li>
+                                <li><strong>Keyboard navigation:</strong> Ensure focus management</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="exercises">
+                        <h2>Practice Exercises</h2>
+                        
+                        <div class="exercises-grid">
+                            <div class="exercise-card">
+                                <h3>Exercise 1: Course Curriculum</h3>
+                                <p>Create a nested list structure for a course:</p>
+                                <ul>
+                                    <li>3 main subjects with nested topics</li>
+                                    <li>Use appropriate list types</li>
+                                    <li>Include subtopics and lessons</li>
+                                    <li>Add a glossary using description lists</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(1)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 2: Student Grade Table</h3>
+                                <p>Build an accessible student grade table:</p>
+                                <ul>
+                                    <li>Include caption and proper structure</li>
+                                    <li>Use thead, tbody, tfoot</li>
+                                    <li>Add scope attributes</li>
+                                    <li>Include summary calculations</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(2)">Show Solution</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="summary">
+                        <h2>Lesson Summary</h2>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>🎯 What You Learned</h3>
+                                <ul>
+                                    <li>Three types of HTML lists for different purposes</li>
+                                    <li>Nested lists create hierarchical structures</li>
+                                    <li>Tables organize tabular data effectively</li>
+                                    <li>Semantic table elements improve structure</li>
+                                    <li>Accessibility features help all users</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>📝 List Types</h3>
+                                <dl>
+                                    <dt>&lt;ul&gt;</dt>
+                                    <dd>Unordered lists (bullet points)</dd>
+                                    
+                                    <dt>&lt;ol&gt;</dt>
+                                    <dd>Ordered lists (numbered)</dd>
+                                    
+                                    <dt>&lt;dl&gt;</dt>
+                                    <dd>Description lists (term-definition)</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>📊 Table Elements</h3>
+                                <ul>
+                                    <li>&lt;table&gt; - Container element</li>
+                                    <li>&lt;caption&gt; - Table title</li>
+                                    <li>&lt;thead&gt; - Header section</li>
+                                    <li>&lt;tbody&gt; - Main content</li>
+                                    <li>&lt;tfoot&gt; - Footer section</li>
+                                    <li>&lt;th&gt; - Header cells</li>
+                                    <li>&lt;td&gt; - Data cells</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-completion">
+                            <div class="completion-message">
+                                <h3>🎉 Data Organization Expert!</h3>
+                                <p>You can now organize information beautifully using lists and tables with proper semantic structure and accessibility!</p>
+                            </div>
+                            
+                            <div class="completion-actions">
+                                <button class="btn btn-primary btn-large" onclick="markLessonComplete()">
+                                    ✓ Mark Lesson Complete
+                                </button>
+                                <a href="lesson07.html" class="btn btn-outline btn-large">
+                                    Next: Forms and Input →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div id="notes-panel" class="notes-panel">
+        <div class="notes-header">
+            <h3>📝 My Notes</h3>
+            <button class="close-btn" onclick="toggleNotes()">&times;</button>
+        </div>
+        <div class="notes-content">
+            <textarea id="notes-textarea" placeholder="Take notes about HTML lists and tables..."></textarea>
+        </div>
+        <div class="notes-footer">
+            <button class="btn btn-sm btn-outline" onclick="clearNotes()">Clear</button>
+            <button class="btn btn-sm btn-primary" onclick="saveNotes()">Save</button>
+        </div>
+    </div>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        let currentProgress = 0;
+        let totalSections = 7;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLesson();
+            initializeCodeEditor();
+            loadNotes();
+            trackProgress();
+        });
+        
+        function initializeLesson() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        updateActiveTocLink(id);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function updateActiveTocLink(activeId) {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        function initializeCodeEditor() {
+            const textarea = document.getElementById('html-editor');
+            if (!textarea) return;
+            
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: 'htmlmixed',
+                theme: 'default',
+                lineNumbers: true,
+                autoCloseTags: true,
+                autoCloseBrackets: true,
+                indentUnit: 2,
+                tabSize: 2,
+                lineWrapping: true
+            });
+            
+            editor.on('change', function() {
+                updatePreview();
+            });
+            
+            window.htmlEditor = editor;
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            if (!window.htmlEditor) return;
+            
+            const code = window.htmlEditor.getValue();
+            const previewFrame = document.getElementById('preview-frame');
+            if (!previewFrame) return;
+            
+            const blob = new Blob([code], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            previewFrame.src = url;
+        }
+        
+        function resetCode() {
+            const defaultCode = document.getElementById('html-editor').defaultValue;
+            if (window.htmlEditor) {
+                window.htmlEditor.setValue(defaultCode);
+                updatePreview();
+            }
+        }
+        
+        function trackProgress() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const progressFill = document.getElementById('lesson-progress');
+            const progressText = document.getElementById('progress-text');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        currentProgress++;
+                        const percentage = Math.min((currentProgress / totalSections) * 100, 100);
+                        progressFill.style.width = percentage + '%';
+                        progressText.textContent = Math.round(percentage) + '% Complete';
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+        }
+        
+        function saveNotes() {
+            const notes = document.getElementById('notes-textarea').value;
+            localStorage.setItem('lesson6-notes', notes);
+            showNotification('Notes saved!');
+        }
+        
+        function loadNotes() {
+            const savedNotes = localStorage.getItem('lesson6-notes');
+            if (savedNotes) {
+                document.getElementById('notes-textarea').value = savedNotes;
+            }
+        }
+        
+        function clearNotes() {
+            document.getElementById('notes-textarea').value = '';
+            localStorage.removeItem('lesson6-notes');
+            showNotification('Notes cleared!');
+        }
+        
+        function markComplete() {
+            if (window.HTMLCourse) {
+                window.HTMLCourse.markLessonComplete(6);
+            }
+            showNotification('Lesson 6 completed! 🎉');
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        function copyCode(button) {
+            const codeBlock = button.parentNode.nextElementSibling.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+        
+        function showExerciseSolution(exerciseNumber) {
+            alert(`Exercise ${exerciseNumber} solution would be shown here in a complete implementation.`);
+        }
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab-btn')) {
+                const tabId = e.target.getAttribute('data-tab');
+                const tabs = e.target.parentNode.querySelectorAll('.tab-btn');
+                const contents = e.target.closest('.code-playground').querySelectorAll('.tab-content');
+                
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                
+                e.target.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

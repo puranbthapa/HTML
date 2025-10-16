@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4: Links and Navigation - HTML Course</title>
+    <meta name="description" content="Master HTML links, navigation menus, and different link types for creating interactive web experiences.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/lesson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="container">
+            <nav class="lesson-nav">
+                <a href="../index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    Back to Course
+                </a>
+                <div class="lesson-info">
+                    <span class="lesson-number">04</span>
+                    <h1 class="lesson-title">Links and Navigation</h1>
+                </div>
+                <div class="lesson-actions">
+                    <button class="btn btn-outline btn-sm" onclick="toggleNotes()">📝 Notes</button>
+                    <button class="btn btn-primary btn-sm" onclick="markComplete()">✓ Complete</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <div class="container">
+            <div class="lesson-layout">
+                <aside class="lesson-sidebar">
+                    <div class="sidebar-content">
+                        <h3>Contents</h3>
+                        <nav class="lesson-toc">
+                            <a href="#basic-links" class="toc-link">Basic Links</a>
+                            <a href="#link-types" class="toc-link">Link Types</a>
+                            <a href="#navigation" class="toc-link">Navigation Menus</a>
+                            <a href="#link-attributes" class="toc-link">Link Attributes</a>
+                            <a href="#accessibility" class="toc-link">Accessibility</a>
+                            <a href="#exercises" class="toc-link">Practice Exercises</a>
+                            <a href="#summary" class="toc-link">Summary</a>
+                        </nav>
+                        
+                        <div class="lesson-progress">
+                            <h4>Lesson Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="lesson-progress"></div>
+                            </div>
+                            <span class="progress-text" id="progress-text">0% Complete</span>
+                        </div>
+                        
+                        <div class="lesson-navigation">
+                            <a href="lesson03.html" class="nav-btn prev-lesson">← Previous Lesson</a>
+                            <a href="lesson05.html" class="nav-btn next-lesson">Next Lesson →</a>
+                        </div>
+                    </div>
+                </aside>
+
+                <article class="lesson-main">
+                    <section class="lesson-section" id="introduction">
+                        <div class="section-header">
+                            <h2>Creating Links and Navigation</h2>
+                            <span class="section-duration">⏱️ 25 minutes</span>
+                        </div>
+                        
+                        <p class="lead">
+                            Links are what make the web truly interconnected. In this lesson, you'll learn how to create 
+                            different types of links and build effective navigation systems for your websites.
+                        </p>
+                        
+                        <div class="learning-objectives">
+                            <h3>🎯 Learning Objectives</h3>
+                            <ul>
+                                <li>Create basic hyperlinks with the anchor element</li>
+                                <li>Understand different types of links (internal, external, email, phone)</li>
+                                <li>Build navigation menus and site structure</li>
+                                <li>Use link attributes for functionality and accessibility</li>
+                                <li>Follow best practices for link text and usability</li>
+                                <li>Implement accessible navigation patterns</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="basic-links">
+                        <h2>Basic HTML Links</h2>
+                        
+                        <div class="concept-box">
+                            <h3>💡 The Anchor Element</h3>
+                            <p>
+                                The <code>&lt;a&gt;</code> (anchor) element creates hyperlinks. The <code>href</code> 
+                                attribute specifies the destination URL or location.
+                            </p>
+                        </div>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Basic Link Syntax</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;a href="https://www.example.com"&gt;Visit Example Website&lt;/a&gt;
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+&lt;a href="#section1"&gt;Jump to Section 1&lt;/a&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Link Structure</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;a href="URL"&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Opening Tag</h4>
+                                    <p>The href attribute contains the destination</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>Link Text</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Link Content</h4>
+                                    <p>The visible, clickable text users see</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>&lt;/a&gt;</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Closing Tag</h4>
+                                    <p>Ends the clickable link area</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="link-types">
+                        <h2>Different Types of Links</h2>
+                        
+                        <h3>External Links</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">External Links</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Links to other websites --&gt;
+&lt;a href="https://www.google.com" target="_blank" rel="noopener"&gt;Google Search&lt;/a&gt;
+&lt;a href="https://www.github.com" target="_blank" rel="noopener"&gt;GitHub&lt;/a&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Internal Links</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Internal Links</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Links within your website --&gt;
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+&lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+&lt;a href="../index.html"&gt;Home&lt;/a&gt;
+&lt;a href="products/shoes.html"&gt;Shoes&lt;/a&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Anchor Links (Same Page)</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Anchor Links</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Jump to sections on the same page --&gt;
+&lt;a href="#introduction"&gt;Go to Introduction&lt;/a&gt;
+&lt;a href="#conclusion"&gt;Jump to Conclusion&lt;/a&gt;
+
+&lt;!-- Target elements need IDs --&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Communication Links</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Email and Phone Links</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Email links --&gt;
+&lt;a href="mailto:info@example.com"&gt;Send Email&lt;/a&gt;
+&lt;a href="mailto:support@example.com?subject=Help Request"&gt;Get Support&lt;/a&gt;
+
+&lt;!-- Phone links --&gt;
+&lt;a href="tel:+1234567890"&gt;Call Us: (123) 456-7890&lt;/a&gt;
+&lt;a href="sms:+1234567890"&gt;Send SMS&lt;/a&gt;</code></pre>
+                        </div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>🌐 External Links</h4>
+                                <ul>
+                                    <li>Use full URLs (http/https)</li>
+                                    <li>Add target="_blank" for new tab</li>
+                                    <li>Include rel="noopener" for security</li>
+                                    <li>Consider user experience</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🏠 Internal Links</h4>
+                                <ul>
+                                    <li>Use relative paths</li>
+                                    <li>Stay within your website</li>
+                                    <li>Faster loading (no new domain)</li>
+                                    <li>Better for SEO</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="navigation">
+                        <h2>Navigation Menus</h2>
+                        
+                        <p>Good navigation helps users find content easily and understand site structure.</p>
+                        
+                        <div class="code-playground">
+                            <div class="playground-header">
+                                <h3>Build a Navigation Menu</h3>
+                                <div class="playground-tabs">
+                                    <button class="tab-btn active" data-tab="html">HTML</button>
+                                    <button class="tab-btn" data-tab="preview">Preview</button>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-content">
+                                <div class="tab-content active" id="html-tab">
+                                    <textarea id="html-editor" class="code-editor" title="HTML Editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Navigation Demo&lt;/title&gt;
+    &lt;style&gt;
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            background: #2563eb;
+            margin: 0;
+        }
+        nav li {
+            margin: 0;
+        }
+        nav a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #1d4ed8;
+        }
+        .breadcrumb {
+            padding: 10px 0;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Main Navigation --&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#portfolio"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    
+    &lt;!-- Breadcrumb Navigation --&gt;
+    &lt;div class="breadcrumb"&gt;
+        &lt;a href="#home"&gt;Home&lt;/a&gt; &amp;gt; 
+        &lt;a href="#services"&gt;Services&lt;/a&gt; &amp;gt; 
+        Web Development
+    &lt;/div&gt;
+    
+    &lt;!-- Page Content --&gt;
+    &lt;main&gt;
+        &lt;h1 id="home"&gt;Welcome to Our Website&lt;/h1&gt;
+        &lt;p&gt;Use the navigation above to explore different sections.&lt;/p&gt;
+        
+        &lt;h2 id="about"&gt;About Us&lt;/h2&gt;
+        &lt;p&gt;Learn more about our company and mission.&lt;/p&gt;
+        
+        &lt;h2 id="services"&gt;Our Services&lt;/h2&gt;
+        &lt;p&gt;Discover the services we offer to our clients.&lt;/p&gt;
+        
+        &lt;h2 id="portfolio"&gt;Portfolio&lt;/h2&gt;
+        &lt;p&gt;Check out our recent work and projects.&lt;/p&gt;
+        
+        &lt;h2 id="contact"&gt;Contact Information&lt;/h2&gt;
+        &lt;p&gt;Email: &lt;a href="mailto:info@example.com"&gt;info@example.com&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;Phone: &lt;a href="tel:+1234567890"&gt;(123) 456-7890&lt;/a&gt;&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                                </div>
+                                
+                                <div class="tab-content" id="preview-tab">
+                                    <iframe id="preview-frame" class="preview-frame" title="Navigation Preview"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-actions">
+                                <button class="btn btn-primary" onclick="updatePreview()">Update Preview</button>
+                                <button class="btn btn-outline" onclick="resetCode()">Reset Code</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="link-attributes">
+                        <h2>Important Link Attributes</h2>
+                        
+                        <h3>Target Attribute</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>target="_blank"</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>New Window/Tab</h4>
+                                    <p>Opens link in a new browser tab</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>target="_self"</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Same Window</h4>
+                                    <p>Opens in current window (default)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Rel Attribute (Security & SEO)</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Rel Attribute Values</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- External links with security --&gt;
+&lt;a href="https://external-site.com" target="_blank" rel="noopener"&gt;External Site&lt;/a&gt;
+
+&lt;!-- No-follow for SEO --&gt;
+&lt;a href="https://untrusted-site.com" rel="nofollow"&gt;Untrusted Link&lt;/a&gt;
+
+&lt;!-- Combined attributes --&gt;
+&lt;a href="https://example.com" target="_blank" rel="noopener nofollow"&gt;Example&lt;/a&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Title Attribute</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Link Titles</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;a href="contact.html" title="Get in touch with our team"&gt;Contact Us&lt;/a&gt;
+&lt;a href="https://example.com" title="Visit Example.com (opens in new tab)" target="_blank" rel="noopener"&gt;Example Site&lt;/a&gt;</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="accessibility">
+                        <h2>Link Accessibility Best Practices</h2>
+                        
+                        <h3>Descriptive Link Text</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>✅ Good Link Text</h4>
+                                <ul>
+                                    <li>"Download the PDF report"</li>
+                                    <li>"Read our privacy policy"</li>
+                                    <li>"Contact our support team"</li>
+                                    <li>"Learn more about HTML5"</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>❌ Poor Link Text</h4>
+                                <ul>
+                                    <li>"Click here"</li>
+                                    <li>"Read more"</li>
+                                    <li>"Link"</li>
+                                    <li>"www.example.com"</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3>Keyboard Navigation</h3>
+                        <div class="info-box">
+                            <h3>⌨️ Keyboard Accessibility</h3>
+                            <ul>
+                                <li><strong>Tab key:</strong> Navigate between links</li>
+                                <li><strong>Enter key:</strong> Activate focused link</li>
+                                <li><strong>Skip links:</strong> Allow jumping to main content</li>
+                                <li><strong>Focus indicators:</strong> Visual feedback for focused links</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Accessible Skip Link</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+
+&lt;nav&gt;
+    &lt;!-- Navigation menu --&gt;
+&lt;/nav&gt;
+
+&lt;main id="main-content"&gt;
+    &lt;!-- Main page content --&gt;
+&lt;/main&gt;</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="exercises">
+                        <h2>Practice Exercises</h2>
+                        
+                        <div class="exercises-grid">
+                            <div class="exercise-card">
+                                <h3>Exercise 1: Personal Website Navigation</h3>
+                                <p>Create a personal website with navigation:</p>
+                                <ul>
+                                    <li>Main navigation with 5 sections</li>
+                                    <li>Internal anchor links</li>
+                                    <li>Email and phone contact links</li>
+                                    <li>External social media links</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(1)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 2: Business Card Page</h3>
+                                <p>Build a digital business card:</p>
+                                <ul>
+                                    <li>Contact information with clickable links</li>
+                                    <li>Social media profiles (external)</li>
+                                    <li>Portfolio/work samples links</li>
+                                    <li>Proper accessibility attributes</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(2)">Show Solution</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="summary">
+                        <h2>Lesson Summary</h2>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>🎯 What You Learned</h3>
+                                <ul>
+                                    <li>Anchor elements create clickable links</li>
+                                    <li>Different link types serve different purposes</li>
+                                    <li>Navigation menus structure website hierarchy</li>
+                                    <li>Link attributes control behavior and security</li>
+                                    <li>Accessible links benefit all users</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>🔑 Key Attributes</h3>
+                                <dl>
+                                    <dt>href</dt>
+                                    <dd>Link destination URL or anchor</dd>
+                                    
+                                    <dt>target</dt>
+                                    <dd>Where to open the link</dd>
+                                    
+                                    <dt>rel</dt>
+                                    <dd>Relationship and security settings</dd>
+                                    
+                                    <dt>title</dt>
+                                    <dd>Additional information on hover</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>📝 Best Practices</h3>
+                                <ul>
+                                    <li>Use descriptive link text</li>
+                                    <li>Add rel="noopener" to external links</li>
+                                    <li>Structure navigation logically</li>
+                                    <li>Test keyboard accessibility</li>
+                                    <li>Consider mobile users</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-completion">
+                            <div class="completion-message">
+                                <h3>🎉 Navigation Mastery!</h3>
+                                <p>You can now create effective links and navigation systems that connect your web content beautifully!</p>
+                            </div>
+                            
+                            <div class="completion-actions">
+                                <button class="btn btn-primary btn-large" onclick="markLessonComplete()">
+                                    ✓ Mark Lesson Complete
+                                </button>
+                                <a href="lesson05.html" class="btn btn-outline btn-large">
+                                    Next: Images and Media →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div id="notes-panel" class="notes-panel">
+        <div class="notes-header">
+            <h3>📝 My Notes</h3>
+            <button class="close-btn" onclick="toggleNotes()">&times;</button>
+        </div>
+        <div class="notes-content">
+            <textarea id="notes-textarea" placeholder="Take notes about HTML links and navigation..."></textarea>
+        </div>
+        <div class="notes-footer">
+            <button class="btn btn-sm btn-outline" onclick="clearNotes()">Clear</button>
+            <button class="btn btn-sm btn-primary" onclick="saveNotes()">Save</button>
+        </div>
+    </div>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        let currentProgress = 0;
+        let totalSections = 7;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLesson();
+            initializeCodeEditor();
+            loadNotes();
+            trackProgress();
+        });
+        
+        function initializeLesson() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        updateActiveTocLink(id);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function updateActiveTocLink(activeId) {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        function initializeCodeEditor() {
+            const textarea = document.getElementById('html-editor');
+            if (!textarea) return;
+            
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: 'htmlmixed',
+                theme: 'default',
+                lineNumbers: true,
+                autoCloseTags: true,
+                autoCloseBrackets: true,
+                indentUnit: 2,
+                tabSize: 2,
+                lineWrapping: true
+            });
+            
+            editor.on('change', function() {
+                updatePreview();
+            });
+            
+            window.htmlEditor = editor;
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            if (!window.htmlEditor) return;
+            
+            const code = window.htmlEditor.getValue();
+            const previewFrame = document.getElementById('preview-frame');
+            if (!previewFrame) return;
+            
+            const blob = new Blob([code], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            previewFrame.src = url;
+        }
+        
+        function resetCode() {
+            const defaultCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Demo</title>
+    <style>
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            background: #2563eb;
+            margin: 0;
+        }
+        nav li {
+            margin: 0;
+        }
+        nav a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #1d4ed8;
+        }
+        .breadcrumb {
+            padding: 10px 0;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="#home">Home</a> &gt; 
+        <a href="#services">Services</a> &gt; 
+        Web Development
+    </div>
+    
+    <!-- Page Content -->
+    <main>
+        <h1 id="home">Welcome to Our Website</h1>
+        <p>Use the navigation above to explore different sections.</p>
+        
+        <h2 id="about">About Us</h2>
+        <p>Learn more about our company and mission.</p>
+        
+        <h2 id="services">Our Services</h2>
+        <p>Discover the services we offer to our clients.</p>
+        
+        <h2 id="portfolio">Portfolio</h2>
+        <p>Check out our recent work and projects.</p>
+        
+        <h2 id="contact">Contact Information</h2>
+        <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+        <p>Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+    </main>
+</body>
+</html>`;
+            
+            if (window.htmlEditor) {
+                window.htmlEditor.setValue(defaultCode);
+                updatePreview();
+            }
+        }
+        
+        function trackProgress() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const progressFill = document.getElementById('lesson-progress');
+            const progressText = document.getElementById('progress-text');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        currentProgress++;
+                        const percentage = Math.min((currentProgress / totalSections) * 100, 100);
+                        progressFill.style.width = percentage + '%';
+                        progressText.textContent = Math.round(percentage) + '% Complete';
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+        }
+        
+        function saveNotes() {
+            const notes = document.getElementById('notes-textarea').value;
+            localStorage.setItem('lesson4-notes', notes);
+            showNotification('Notes saved!');
+        }
+        
+        function loadNotes() {
+            const savedNotes = localStorage.getItem('lesson4-notes');
+            if (savedNotes) {
+                document.getElementById('notes-textarea').value = savedNotes;
+            }
+        }
+        
+        function clearNotes() {
+            document.getElementById('notes-textarea').value = '';
+            localStorage.removeItem('lesson4-notes');
+            showNotification('Notes cleared!');
+        }
+        
+        function markComplete() {
+            if (window.HTMLCourse) {
+                window.HTMLCourse.markLessonComplete(4);
+            }
+            showNotification('Lesson 4 completed! 🎉');
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        function copyCode(button) {
+            const codeBlock = button.parentNode.nextElementSibling.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+        
+        function showExerciseSolution(exerciseNumber) {
+            alert(`Exercise ${exerciseNumber} solution would be shown here in a complete implementation.`);
+        }
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab-btn')) {
+                const tabId = e.target.getAttribute('data-tab');
+                const tabs = e.target.parentNode.querySelectorAll('.tab-btn');
+                const contents = e.target.closest('.code-playground').querySelectorAll('.tab-content');
+                
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                
+                e.target.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

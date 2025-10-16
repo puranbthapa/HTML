@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5: Images and Media - HTML Course</title>
+    <meta name="description" content="Master HTML images, multimedia elements, and responsive media for engaging web experiences.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/lesson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="container">
+            <nav class="lesson-nav">
+                <a href="../index.html" class="back-link">
+                    <span class="back-arrow">←</span>
+                    Back to Course
+                </a>
+                <div class="lesson-info">
+                    <span class="lesson-number">05</span>
+                    <h1 class="lesson-title">Images and Media</h1>
+                </div>
+                <div class="lesson-actions">
+                    <button class="btn btn-outline btn-sm" onclick="toggleNotes()">📝 Notes</button>
+                    <button class="btn btn-primary btn-sm" onclick="markComplete()">✓ Complete</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <div class="container">
+            <div class="lesson-layout">
+                <aside class="lesson-sidebar">
+                    <div class="sidebar-content">
+                        <h3>Contents</h3>
+                        <nav class="lesson-toc">
+                            <a href="#images" class="toc-link">HTML Images</a>
+                            <a href="#responsive-images" class="toc-link">Responsive Images</a>
+                            <a href="#multimedia" class="toc-link">Multimedia Elements</a>
+                            <a href="#accessibility" class="toc-link">Media Accessibility</a>
+                            <a href="#optimization" class="toc-link">Performance Tips</a>
+                            <a href="#exercises" class="toc-link">Practice Exercises</a>
+                            <a href="#summary" class="toc-link">Summary</a>
+                        </nav>
+                        
+                        <div class="lesson-progress">
+                            <h4>Lesson Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="lesson-progress"></div>
+                            </div>
+                            <span class="progress-text" id="progress-text">0% Complete</span>
+                        </div>
+                        
+                        <div class="lesson-navigation">
+                            <a href="lesson04.html" class="nav-btn prev-lesson">← Previous Lesson</a>
+                            <a href="lesson06.html" class="nav-btn next-lesson">Next Lesson →</a>
+                        </div>
+                    </div>
+                </aside>
+
+                <article class="lesson-main">
+                    <section class="lesson-section" id="introduction">
+                        <div class="section-header">
+                            <h2>Working with Images and Media</h2>
+                            <span class="section-duration">⏱️ 30 minutes</span>
+                        </div>
+                        
+                        <p class="lead">
+                            Visual content makes websites engaging and memorable. Learn to add images, videos, 
+                            and other multimedia elements that enhance user experience while maintaining 
+                            accessibility and performance.
+                        </p>
+                        
+                        <div class="learning-objectives">
+                            <h3>🎯 Learning Objectives</h3>
+                            <ul>
+                                <li>Add images with proper attributes and accessibility</li>
+                                <li>Create responsive images for different screen sizes</li>
+                                <li>Embed audio and video content</li>
+                                <li>Understand image formats and optimization</li>
+                                <li>Implement lazy loading for better performance</li>
+                                <li>Follow media accessibility best practices</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="images">
+                        <h2>HTML Images</h2>
+                        
+                        <div class="concept-box">
+                            <h3>💡 The Image Element</h3>
+                            <p>
+                                The <code>&lt;img&gt;</code> element embeds images in web pages. It's a self-closing 
+                                tag that requires the <code>src</code> attribute to specify the image source.
+                            </p>
+                        </div>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Basic Image Syntax</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;img src="image.jpg" alt="Description of the image"&gt;
+&lt;img src="photos/sunset.png" alt="Beautiful sunset over the ocean"&gt;
+&lt;img src="https://example.com/logo.svg" alt="Company logo"&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Essential Image Attributes</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>src</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Source Path</h4>
+                                    <p>Required: URL or file path to the image</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>alt</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Alternative Text</h4>
+                                    <p>Required: Description for accessibility</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>width/height</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Dimensions</h4>
+                                    <p>Optional: Control image size</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Image with All Attributes</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;img 
+    src="photos/team-meeting.jpg" 
+    alt="Team members collaborating in a modern office space"
+    width="600" 
+    height="400"
+    title="Our team at work"
+    loading="lazy"
+&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Image Formats Guide</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>📸 JPEG (.jpg)</h4>
+                                <ul>
+                                    <li>Best for photographs</li>
+                                    <li>Good compression</li>
+                                    <li>Lossy format</li>
+                                    <li>No transparency</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🎨 PNG (.png)</h4>
+                                <ul>
+                                    <li>Best for graphics with transparency</li>
+                                    <li>Lossless compression</li>
+                                    <li>Supports transparency</li>
+                                    <li>Larger file sizes</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>📊 SVG (.svg)</h4>
+                                <ul>
+                                    <li>Vector graphics (scalable)</li>
+                                    <li>Perfect for icons/logos</li>
+                                    <li>Small file sizes</li>
+                                    <li>Can be styled with CSS</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>🚀 WebP (.webp)</h4>
+                                <ul>
+                                    <li>Modern format, smaller files</li>
+                                    <li>Better compression than JPEG</li>
+                                    <li>Supports transparency</li>
+                                    <li>Not supported in older browsers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="responsive-images">
+                        <h2>Responsive Images</h2>
+                        
+                        <p>Responsive images adapt to different screen sizes and device capabilities for optimal performance and user experience.</p>
+                        
+                        <h3>Using the Picture Element</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Picture Element for Different Formats</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;picture&gt;
+    &lt;source srcset="image.webp" type="image/webp"&gt;
+    &lt;source srcset="image.jpg" type="image/jpeg"&gt;
+    &lt;img src="image.jpg" alt="Fallback image description"&gt;
+&lt;/picture&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Responsive Images with Srcset</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Different Sizes for Different Screens</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;img 
+    src="image-800w.jpg" 
+    srcset="
+        image-400w.jpg 400w,
+        image-800w.jpg 800w,
+        image-1200w.jpg 1200w
+    "
+    sizes="(max-width: 600px) 400px, 
+           (max-width: 900px) 800px, 
+           1200px"
+    alt="Responsive image example"
+&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Art Direction with Picture</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Different Images for Different Screen Sizes</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" srcset="mobile-hero.jpg"&gt;
+    &lt;source media="(max-width: 1024px)" srcset="tablet-hero.jpg"&gt;
+    &lt;img src="desktop-hero.jpg" alt="Hero image adapting to screen size"&gt;
+&lt;/picture&gt;</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="multimedia">
+                        <h2>Audio and Video Elements</h2>
+                        
+                        <h3>HTML5 Video</h3>
+                        <div class="code-playground">
+                            <div class="playground-header">
+                                <h3>Video Implementation</h3>
+                                <div class="playground-tabs">
+                                    <button class="tab-btn active" data-tab="html">HTML</button>
+                                    <button class="tab-btn" data-tab="preview">Preview</button>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-content">
+                                <div class="tab-content active" id="html-tab">
+                                    <textarea id="html-editor" class="code-editor" title="HTML Editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Media Elements Demo&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .media-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        video, audio {
+            width: 100%;
+            max-width: 600px;
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .image-card {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .image-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        figcaption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;📸 Media Gallery Demo&lt;/h1&gt;
+    
+    &lt;!-- Image Gallery --&gt;
+    &lt;section class="media-container"&gt;
+        &lt;h2&gt;Image Gallery&lt;/h2&gt;
+        &lt;div class="image-gallery"&gt;
+            &lt;figure class="image-card"&gt;
+                &lt;img src="https://picsum.photos/300/200?random=1" 
+                     alt="Random landscape photo"
+                     loading="lazy"&gt;
+                &lt;figcaption&gt;Beautiful Landscape&lt;/figcaption&gt;
+            &lt;/figure&gt;
+            
+            &lt;figure class="image-card"&gt;
+                &lt;img src="https://picsum.photos/300/200?random=2" 
+                     alt="Random nature photo"
+                     loading="lazy"&gt;
+                &lt;figcaption&gt;Nature Photography&lt;/figcaption&gt;
+            &lt;/figure&gt;
+            
+            &lt;figure class="image-card"&gt;
+                &lt;img src="https://picsum.photos/300/200?random=3" 
+                     alt="Random architecture photo"
+                     loading="lazy"&gt;
+                &lt;figcaption&gt;Modern Architecture&lt;/figcaption&gt;
+            &lt;/figure&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;!-- Video Section --&gt;
+    &lt;section class="media-container"&gt;
+        &lt;h2&gt;HTML5 Video&lt;/h2&gt;
+        &lt;video controls poster="https://picsum.photos/600/300?random=4"&gt;
+            &lt;source src="sample-video.mp4" type="video/mp4"&gt;
+            &lt;source src="sample-video.webm" type="video/webm"&gt;
+            &lt;p&gt;Your browser doesn't support HTML5 video. 
+               &lt;a href="sample-video.mp4"&gt;Download the video&lt;/a&gt; instead.&lt;/p&gt;
+        &lt;/video&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Video Features:&lt;/strong&gt;&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Native browser controls (play, pause, volume)&lt;/li&gt;
+            &lt;li&gt;Multiple format support for compatibility&lt;/li&gt;
+            &lt;li&gt;Poster image shown before playback&lt;/li&gt;
+            &lt;li&gt;Fallback content for unsupported browsers&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/section&gt;
+    
+    &lt;!-- Audio Section --&gt;
+    &lt;section class="media-container"&gt;
+        &lt;h2&gt;HTML5 Audio&lt;/h2&gt;
+        &lt;audio controls&gt;
+            &lt;source src="sample-audio.mp3" type="audio/mp3"&gt;
+            &lt;source src="sample-audio.ogg" type="audio/ogg"&gt;
+            &lt;p&gt;Your browser doesn't support HTML5 audio. 
+               &lt;a href="sample-audio.mp3"&gt;Download the audio&lt;/a&gt; instead.&lt;/p&gt;
+        &lt;/audio&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Audio Features:&lt;/strong&gt;&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Compact audio player controls&lt;/li&gt;
+            &lt;li&gt;Multiple format support (MP3, OGG, WAV)&lt;/li&gt;
+            &lt;li&gt;Accessible keyboard navigation&lt;/li&gt;
+            &lt;li&gt;No plugins required&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/section&gt;
+    
+    &lt;!-- Responsive Picture Element --&gt;
+    &lt;section class="media-container"&gt;
+        &lt;h2&gt;Responsive Images&lt;/h2&gt;
+        &lt;picture&gt;
+            &lt;source media="(max-width: 600px)" 
+                    srcset="https://picsum.photos/400/200?random=5"&gt;
+            &lt;source media="(max-width: 1000px)" 
+                    srcset="https://picsum.photos/600/300?random=5"&gt;
+            &lt;img src="https://picsum.photos/800/400?random=5" 
+                 alt="Responsive image that changes based on screen size"
+                 style="width: 100%; height: auto;"&gt;
+        &lt;/picture&gt;
+        
+        &lt;p&gt;💡 &lt;em&gt;This image adapts to different screen sizes using the picture element.&lt;/em&gt;&lt;/p&gt;
+    &lt;/section&gt;
+    
+    &lt;!-- SVG Example --&gt;
+    &lt;section class="media-container"&gt;
+        &lt;h2&gt;Inline SVG Graphics&lt;/h2&gt;
+        &lt;svg width="200" height="200" viewBox="0 0 200 200"&gt;
+            &lt;circle cx="100" cy="100" r="80" fill="#3b82f6" fill-opacity="0.3"&gt;&lt;/circle&gt;
+            &lt;circle cx="100" cy="100" r="60" fill="#3b82f6" fill-opacity="0.6"&gt;&lt;/circle&gt;
+            &lt;circle cx="100" cy="100" r="40" fill="#3b82f6"&gt;&lt;/circle&gt;
+            &lt;text x="100" y="105" text-anchor="middle" fill="white" font-size="14"&gt;SVG&lt;/text&gt;
+        &lt;/svg&gt;
+        
+        &lt;p&gt;&lt;strong&gt;SVG Benefits:&lt;/strong&gt; Scalable, small file size, can be styled with CSS&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                                </div>
+                                
+                                <div class="tab-content" id="preview-tab">
+                                    <iframe id="preview-frame" class="preview-frame" title="Media Preview"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="playground-actions">
+                                <button class="btn btn-primary" onclick="updatePreview()">Update Preview</button>
+                                <button class="btn btn-outline" onclick="resetCode()">Reset Code</button>
+                            </div>
+                        </div>
+                        
+                        <h3>Video Attributes</h3>
+                        <div class="structure-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>controls</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Player Controls</h4>
+                                    <p>Show play/pause, volume, progress bar</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>poster</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Preview Image</h4>
+                                    <p>Image shown before video plays</p>
+                                </div>
+                            </div>
+                            
+                            <div class="breakdown-item">
+                                <div class="breakdown-code">
+                                    <code>autoplay</code>
+                                </div>
+                                <div class="breakdown-explanation">
+                                    <h4>Auto Play</h4>
+                                    <p>Start playing automatically (use carefully)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Audio Element</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Audio with Multiple Sources</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;audio controls preload="metadata"&gt;
+    &lt;source src="audio/song.mp3" type="audio/mp3"&gt;
+    &lt;source src="audio/song.ogg" type="audio/ogg"&gt;
+    &lt;source src="audio/song.wav" type="audio/wav"&gt;
+    &lt;p&gt;Your browser doesn't support HTML5 audio. 
+       &lt;a href="audio/song.mp3"&gt;Download the audio file&lt;/a&gt;.&lt;/p&gt;
+&lt;/audio&gt;</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="accessibility">
+                        <h2>Media Accessibility</h2>
+                        
+                        <h3>Alt Text Best Practices</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4>✅ Good Alt Text</h4>
+                                <ul>
+                                    <li>"Team meeting in conference room"</li>
+                                    <li>"Red sports car parked in driveway"</li>
+                                    <li>"Chart showing 25% sales increase"</li>
+                                    <li>"" (empty for decorative images)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-card">
+                                <h4>❌ Poor Alt Text</h4>
+                                <ul>
+                                    <li>"Image" or "Photo"</li>
+                                    <li>"DSC_001234.jpg"</li>
+                                    <li>"Click here to see image"</li>
+                                    <li>Very long descriptions</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3>Figure and Figcaption</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Semantic Image Markup</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;figure&gt;
+    &lt;img src="chart.png" alt="Sales data visualization"&gt;
+    &lt;figcaption&gt;
+        Sales increased by 25% in Q3 2024 compared to the previous quarter
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Video Accessibility</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Accessible Video with Captions</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;track kind="captions" 
+           src="captions-en.vtt" 
+           srclang="en" 
+           label="English captions"&gt;
+    &lt;track kind="subtitles" 
+           src="subtitles-es.vtt" 
+           srclang="es" 
+           label="Spanish subtitles"&gt;
+&lt;/video&gt;</code></pre>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="optimization">
+                        <h2>Performance Optimization</h2>
+                        
+                        <h3>Lazy Loading</h3>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-title">Native Lazy Loading</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Images load only when needed --&gt;
+&lt;img src="image1.jpg" alt="Description" loading="lazy"&gt;
+&lt;img src="image2.jpg" alt="Description" loading="lazy"&gt;
+&lt;img src="hero-image.jpg" alt="Description" loading="eager"&gt;</code></pre>
+                        </div>
+                        
+                        <h3>Image Optimization Checklist</h3>
+                        <div class="info-box">
+                            <h3>🚀 Performance Tips</h3>
+                            <ul>
+                                <li><strong>Choose the right format:</strong> JPEG for photos, PNG for graphics, SVG for icons</li>
+                                <li><strong>Compress images:</strong> Use tools like TinyPNG or ImageOptim</li>
+                                <li><strong>Use appropriate dimensions:</strong> Don't load huge images for small displays</li>
+                                <li><strong>Implement lazy loading:</strong> Improve initial page load times</li>
+                                <li><strong>Consider WebP format:</strong> Better compression for modern browsers</li>
+                                <li><strong>Use CDNs:</strong> Faster delivery through geographically distributed servers</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="exercises">
+                        <h2>Practice Exercises</h2>
+                        
+                        <div class="exercises-grid">
+                            <div class="exercise-card">
+                                <h3>Exercise 1: Photo Gallery</h3>
+                                <p>Create a responsive photo gallery:</p>
+                                <ul>
+                                    <li>Grid layout with 6 images</li>
+                                    <li>Proper alt text for each image</li>
+                                    <li>Lazy loading implementation</li>
+                                    <li>Figure and figcaption elements</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(1)">Show Solution</button>
+                            </div>
+                            
+                            <div class="exercise-card">
+                                <h3>Exercise 2: Media Portfolio</h3>
+                                <p>Build a multimedia portfolio page:</p>
+                                <ul>
+                                    <li>Mix of images, video, and audio</li>
+                                    <li>Responsive image implementation</li>
+                                    <li>Video with multiple format support</li>
+                                    <li>Accessible media descriptions</li>
+                                </ul>
+                                <button class="btn btn-outline" onclick="showExerciseSolution(2)">Show Solution</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="lesson-section" id="summary">
+                        <h2>Lesson Summary</h2>
+                        
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h3>🎯 What You Learned</h3>
+                                <ul>
+                                    <li>Image elements require src and alt attributes</li>
+                                    <li>Responsive images adapt to different screens</li>
+                                    <li>HTML5 supports native audio and video</li>
+                                    <li>Accessibility makes media usable for everyone</li>
+                                    <li>Optimization improves performance and UX</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>📁 Image Formats</h3>
+                                <dl>
+                                    <dt>JPEG</dt>
+                                    <dd>Photographs, lossy compression</dd>
+                                    
+                                    <dt>PNG</dt>
+                                    <dd>Graphics with transparency</dd>
+                                    
+                                    <dt>SVG</dt>
+                                    <dd>Scalable vector graphics</dd>
+                                    
+                                    <dt>WebP</dt>
+                                    <dd>Modern format, better compression</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <h3>⚡ Performance</h3>
+                                <ul>
+                                    <li>Use loading="lazy" for images below the fold</li>
+                                    <li>Provide multiple formats with picture element</li>
+                                    <li>Optimize file sizes before uploading</li>
+                                    <li>Use appropriate dimensions</li>
+                                    <li>Consider using a CDN</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="lesson-completion">
+                            <div class="completion-message">
+                                <h3>🎉 Media Master!</h3>
+                                <p>You now know how to enrich your web pages with images, videos, and multimedia content while maintaining accessibility and performance!</p>
+                            </div>
+                            
+                            <div class="completion-actions">
+                                <button class="btn btn-primary btn-large" onclick="markLessonComplete()">
+                                    ✓ Mark Lesson Complete
+                                </button>
+                                <a href="lesson06.html" class="btn btn-outline btn-large">
+                                    Next: Lists and Tables →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div id="notes-panel" class="notes-panel">
+        <div class="notes-header">
+            <h3>📝 My Notes</h3>
+            <button class="close-btn" onclick="toggleNotes()">&times;</button>
+        </div>
+        <div class="notes-content">
+            <textarea id="notes-textarea" placeholder="Take notes about HTML images and media..."></textarea>
+        </div>
+        <div class="notes-footer">
+            <button class="btn btn-sm btn-outline" onclick="clearNotes()">Clear</button>
+            <button class="btn btn-sm btn-primary" onclick="saveNotes()">Save</button>
+        </div>
+    </div>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        let currentProgress = 0;
+        let totalSections = 7;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLesson();
+            initializeCodeEditor();
+            loadNotes();
+            trackProgress();
+        });
+        
+        function initializeLesson() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        updateActiveTocLink(id);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function updateActiveTocLink(activeId) {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        function initializeCodeEditor() {
+            const textarea = document.getElementById('html-editor');
+            if (!textarea) return;
+            
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: 'htmlmixed',
+                theme: 'default',
+                lineNumbers: true,
+                autoCloseTags: true,
+                autoCloseBrackets: true,
+                indentUnit: 2,
+                tabSize: 2,
+                lineWrapping: true
+            });
+            
+            editor.on('change', function() {
+                updatePreview();
+            });
+            
+            window.htmlEditor = editor;
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            if (!window.htmlEditor) return;
+            
+            const code = window.htmlEditor.getValue();
+            const previewFrame = document.getElementById('preview-frame');
+            if (!previewFrame) return;
+            
+            const blob = new Blob([code], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            previewFrame.src = url;
+        }
+        
+        function resetCode() {
+            const defaultCode = document.getElementById('html-editor').defaultValue;
+            if (window.htmlEditor) {
+                window.htmlEditor.setValue(defaultCode);
+                updatePreview();
+            }
+        }
+        
+        function trackProgress() {
+            const sections = document.querySelectorAll('.lesson-section');
+            const progressFill = document.getElementById('lesson-progress');
+            const progressText = document.getElementById('progress-text');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        currentProgress++;
+                        const percentage = Math.min((currentProgress / totalSections) * 100, 100);
+                        progressFill.style.width = percentage + '%';
+                        progressText.textContent = Math.round(percentage) + '% Complete';
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+        }
+        
+        function saveNotes() {
+            const notes = document.getElementById('notes-textarea').value;
+            localStorage.setItem('lesson5-notes', notes);
+            showNotification('Notes saved!');
+        }
+        
+        function loadNotes() {
+            const savedNotes = localStorage.getItem('lesson5-notes');
+            if (savedNotes) {
+                document.getElementById('notes-textarea').value = savedNotes;
+            }
+        }
+        
+        function clearNotes() {
+            document.getElementById('notes-textarea').value = '';
+            localStorage.removeItem('lesson5-notes');
+            showNotification('Notes cleared!');
+        }
+        
+        function markComplete() {
+            if (window.HTMLCourse) {
+                window.HTMLCourse.markLessonComplete(5);
+            }
+            showNotification('Lesson 5 completed! 🎉');
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        function copyCode(button) {
+            const codeBlock = button.parentNode.nextElementSibling.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+        
+        function showExerciseSolution(exerciseNumber) {
+            alert(`Exercise ${exerciseNumber} solution would be shown here in a complete implementation.`);
+        }
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('tab-btn')) {
+                const tabId = e.target.getAttribute('data-tab');
+                const tabs = e.target.parentNode.querySelectorAll('.tab-btn');
+                const contents = e.target.closest('.code-playground').querySelectorAll('.tab-content');
+                
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                
+                e.target.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Example - HTML Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #2563eb;
+            margin-top: 30px;
+        }
+        
+        .highlight {
+            background-color: #e0f2fe;
+            padding: 15px;
+            border-left: 4px solid #2563eb;
+            margin: 20px 0;
+        }
+        
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .example-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        ul li {
+            margin: 8px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #2563eb;
+            color: white;
+        }
+        
+        .form-section {
+            background-color: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Heading -->
+        <h1>🌐 Complete HTML Example Page</h1>
+        
+        <!-- Introduction Section -->
+        <div class="highlight">
+            <p><strong>Welcome!</strong> This is a comprehensive example HTML page that demonstrates 
+            various HTML elements and concepts covered in our HTML course.</p>
+        </div>
+
+        <!-- Text Elements Section -->
+        <section>
+            <h2>📝 Text Elements</h2>
+            <p>This is a regular paragraph with <strong>bold text</strong>, <em>italic text</em>, 
+            and <mark>highlighted text</mark>. You can also use <code>inline code</code> elements.</p>
+            
+            <blockquote>
+                <p>"Learning HTML is like learning the alphabet of the web. Once you master it, 
+                you can create anything you imagine!"</p>
+                <cite>- Web Development Expert</cite>
+            </blockquote>
+            
+            <div class="example-box">
+                <h3>Heading Hierarchy</h3>
+                <h1 style="margin: 10px 0; font-size: 24px;">Heading 1 (h1)</h1>
+                <h2 style="margin: 10px 0; font-size: 20px;">Heading 2 (h2)</h2>
+                <h3 style="margin: 10px 0; font-size: 18px;">Heading 3 (h3)</h3>
+                <h4 style="margin: 10px 0; font-size: 16px;">Heading 4 (h4)</h4>
+                <h5 style="margin: 10px 0; font-size: 14px;">Heading 5 (h5)</h5>
+                <h6 style="margin: 10px 0; font-size: 12px;">Heading 6 (h6)</h6>
+            </div>
+        </section>
+
+        <!-- Lists Section -->
+        <section>
+            <h2>📋 Lists and Organization</h2>
+            
+            <h3>Unordered List (Bullet Points)</h3>
+            <ul>
+                <li>HTML provides structure to web pages</li>
+                <li>CSS handles styling and layout</li>
+                <li>JavaScript adds interactivity</li>
+                <li>These three technologies work together</li>
+            </ul>
+            
+            <h3>Ordered List (Numbered)</h3>
+            <ol>
+                <li>Plan your website structure</li>
+                <li>Write the HTML markup</li>
+                <li>Add CSS styling</li>
+                <li>Implement JavaScript functionality</li>
+                <li>Test and optimize</li>
+            </ol>
+            
+            <h3>Definition List</h3>
+            <dl>
+                <dt><strong>HTML</strong></dt>
+                <dd>HyperText Markup Language - the structure of web pages</dd>
+                
+                <dt><strong>CSS</strong></dt>
+                <dd>Cascading Style Sheets - controls the visual presentation</dd>
+                
+                <dt><strong>JavaScript</strong></dt>
+                <dd>Programming language for web interactivity and behavior</dd>
+            </dl>
+        </section>
+
+        <!-- Links Section -->
+        <section>
+            <h2>🔗 Links and Navigation</h2>
+            <p>Here are different types of links:</p>
+            <ul>
+                <li><a href="../index.html">Back to Course Home</a> (relative link)</li>
+                <li><a href="https://www.w3.org/html/" target="_blank">W3C HTML Specification</a> (external link)</li>
+                <li><a href="mailto:student@school.edu">Send Email</a> (email link)</li>
+                <li><a href="tel:+1234567890">Call Phone</a> (phone link)</li>
+                <li><a href="#form-section">Jump to Form Section</a> (anchor link)</li>
+            </ul>
+        </section>
+
+        <!-- Images Section -->
+        <section>
+            <h2>🖼️ Images and Media</h2>
+            <p>Images are essential for web pages. Here's how to include them:</p>
+            
+            <div class="example-box">
+                <h3>Placeholder Image Example</h3>
+                <img src="https://via.placeholder.com/400x200/2563eb/ffffff?text=HTML+Course+Image" 
+                     alt="HTML Course Placeholder Image" 
+                     style="width: 100%; height: auto; border-radius: 8px;">
+                <p><small>This is a placeholder image showing proper HTML image syntax.</small></p>
+            </div>
+        </section>
+
+        <!-- Table Section -->
+        <section>
+            <h2>📊 Tables for Data</h2>
+            <p>Tables are perfect for displaying structured data:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>HTML Element</th>
+                        <th>Purpose</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;h1&gt;</td>
+                        <td>Main heading</td>
+                        <td>&lt;h1&gt;Page Title&lt;/h1&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;p&gt;</td>
+                        <td>Paragraph</td>
+                        <td>&lt;p&gt;This is a paragraph.&lt;/p&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;a&gt;</td>
+                        <td>Link</td>
+                        <td>&lt;a href="page.html"&gt;Click here&lt;/a&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;img&gt;</td>
+                        <td>Image</td>
+                        <td>&lt;img src="image.jpg" alt="Description"&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Form Section -->
+        <section id="form-section">
+            <h2>📝 Forms and User Input</h2>
+            <p>Forms allow users to interact with your website:</p>
+            
+            <div class="form-section">
+                <h3>Student Registration Form</h3>
+                <form action="#" method="post">
+                    <label for="student-name">Full Name:</label>
+                    <input type="text" id="student-name" name="name" placeholder="Enter your full name" required>
+                    
+                    <label for="student-email">Email Address:</label>
+                    <input type="email" id="student-email" name="email" placeholder="your.email@school.edu" required>
+                    
+                    <label for="student-class">Class:</label>
+                    <select id="student-class" name="class" required>
+                        <option value="">Select your class</option>
+                        <option value="9">Class IX</option>
+                        <option value="10">Class X</option>
+                        <option value="11">Class XI</option>
+                        <option value="12">Class XII</option>
+                    </select>
+                    
+                    <label for="student-subject">Favorite Subject:</label>
+                    <input type="text" id="student-subject" name="subject" placeholder="e.g., Computer Science">
+                    
+                    <label for="student-comments">Comments or Questions:</label>
+                    <textarea id="student-comments" name="comments" rows="4" 
+                              placeholder="Tell us about your learning goals..."></textarea>
+                    
+                    <div>
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter" style="width: auto; display: inline;">Subscribe to course updates</label>
+                    </div>
+                    
+                    <button type="submit">Register for Course</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Semantic Elements Section -->
+        <section>
+            <h2>🏗️ Semantic HTML5 Elements</h2>
+            <p>Modern HTML5 provides semantic elements for better structure:</p>
+            
+            <div class="example-box">
+                <article>
+                    <header>
+                        <h3>Article Header</h3>
+                        <p><time datetime="2024-01-01">January 1, 2024</time> | By HTML Student</p>
+                    </header>
+                    
+                    <p>This is an <code>&lt;article&gt;</code> element containing a complete piece of content. 
+                    It has a <code>&lt;header&gt;</code> with metadata and the main content.</p>
+                    
+                    <aside style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                        <p><strong>Aside:</strong> This <code>&lt;aside&gt;</code> element contains 
+                        supplementary information related to the article.</p>
+                    </aside>
+                    
+                    <footer style="border-top: 1px solid #ddd; padding-top: 10px; margin-top: 15px; font-size: 14px; color: #666;">
+                        <p>Article footer with additional information or navigation.</p>
+                    </footer>
+                </article>
+            </div>
+        </section>
+
+        <!-- Multimedia Section -->
+        <section>
+            <h2>🎵 Multimedia Elements</h2>
+            <p>HTML5 supports audio and video elements:</p>
+            
+            <div class="example-box">
+                <h3>Audio Element (Placeholder)</h3>
+                <audio controls style="width: 100%;">
+                    <source src="audio-example.mp3" type="audio/mpeg">
+                    <p>Your browser doesn't support the audio element. 
+                    <a href="audio-example.mp3">Download the audio file</a> instead.</p>
+                </audio>
+                
+                <h3>Video Element (Placeholder)</h3>
+                <video controls width="100%" height="200" style="background: #f0f0f0; border-radius: 5px;">
+                    <source src="video-example.mp4" type="video/mp4">
+                    <p>Your browser doesn't support the video element. 
+                    <a href="video-example.mp4">Download the video file</a> instead.</p>
+                </video>
+                <p><small>Note: Multimedia files are not included in this example, but the HTML structure is correct.</small></p>
+            </div>
+        </section>
+
+        <!-- Code Examples Section -->
+        <section>
+            <h2>💻 Code Examples</h2>
+            <p>Here's how to display code in HTML:</p>
+            
+            <div class="example-box">
+                <h3>Inline Code</h3>
+                <p>Use the <code>&lt;code&gt;</code> element for <code>inline code snippets</code> within text.</p>
+                
+                <h3>Code Blocks</h3>
+                <pre style="background: #1e293b; color: #f1f5f9; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;My Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; text-align: center; color: #666;">
+            <p><strong>🎉 Congratulations!</strong> You've seen examples of most major HTML elements.</p>
+            <p>This example page demonstrates the structure and elements you'll learn in the HTML course.</p>
+            <p><a href="../index.html" style="color: #2563eb;">← Return to HTML Course Home</a></p>
+            
+            <div style="margin-top: 20px; font-size: 14px;">
+                <p>📚 HTML Course Example | Created for Class XI Students</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript for simple interactivity -->
+    <script>
+        // Simple form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! This is just an example form.');
+        });
+        
+        // Add current date to any datetime elements
+        const timeElements = document.querySelectorAll('time');
+        timeElements.forEach(function(time) {
+            if (!time.textContent) {
+                time.textContent = new Date().toLocaleDateString();
+            }
+        });
+        
+        console.log('HTML Example Page loaded successfully! 🚀');
+    </script>
+</body>
+</html>

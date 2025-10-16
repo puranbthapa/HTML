@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional HTML Course - Class XI</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🌐 HTML Mastery</h1>
+                    <p class="subtitle">Complete HTML Course for Class XI</p>
+                </div>
+                <nav class="header-nav">
+                    <a href="#overview" class="nav-link">Overview</a>
+                    <a href="#lessons" class="nav-link">Lessons</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#resources" class="nav-link">Resources</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2>Master HTML from Fundamentals to Advanced</h2>
+                    <p class="hero-description">
+                        Learn HTML (HyperText Markup Language) - the foundation of web development. 
+                        This comprehensive course covers everything from basic structure to semantic HTML5, 
+                        forms, multimedia, and modern web standards.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Interactive Lessons</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Code Examples</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Hands-on</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#lessons" class="btn btn-primary btn-large">Start Learning</a>
+                        <a href="examples/playground.html" class="btn btn-outline btn-large">Try HTML Editor</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <span class="code-title">example.html</span>
+                            <div class="code-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                        </div>
+                        <div class="code-content">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My First Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Welcome to HTML!&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;a href="#about"&gt;About&lt;/a&gt;
+            &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section id="about"&gt;
+            &lt;h2&gt;About Me&lt;/h2&gt;
+            &lt;p&gt;Learning HTML is fun!&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Tabs -->
+            <nav class="course-tabs">
+                <button class="tab-btn active" data-tab="overview">📊 Course Overview</button>
+                <button class="tab-btn" data-tab="lessons">📚 Lessons</button>
+                <button class="tab-btn" data-tab="projects">🚀 Projects</button>
+                <button class="tab-btn" data-tab="resources">🔗 Resources</button>
+            </nav>
+
+            <!-- Course Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <section class="learning-path">
+                    <h3>Your Learning Journey</h3>
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="progress-text">0/15 Lessons Completed</p>
+                    </div>
+
+                    <div class="path-modules">
+                        <div class="module-card">
+                            <div class="module-header">
+                                <span class="module-icon">🎯</span>
+                                <h4>Module 1: Foundations</h4>
+                                <span class="module-duration">4 hours</span>
+                            </div>
+                            <p class="module-description">Learn HTML basics, document structure, and essential tags</p>
+                            <div class="module-lessons">
+                                <span class="lesson-badge">Lessons 1-5</span>
+                                <span class="difficulty beginner">Beginner</span>
+                            </div>
+                            <ul class="module-topics">
+                                <li>HTML Document Structure</li>
+                                <li>Basic Tags and Elements</li>
+                                <li>Text Formatting</li>
+                                <li>Links and Navigation</li>
+                                <li>Images and Media</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-header">
+                                <span class="module-icon">🏗️</span>
+                                <h4>Module 2: Structure & Semantics</h4>
+                                <span class="module-duration">5 hours</span>
+                            </div>
+                            <p class="module-description">Master semantic HTML, lists, tables, and page structure</p>
+                            <div class="module-lessons">
+                                <span class="lesson-badge">Lessons 6-10</span>
+                                <span class="difficulty intermediate">Intermediate</span>
+                            </div>
+                            <ul class="module-topics">
+                                <li>Semantic HTML5 Elements</li>
+                                <li>Lists and Tables</li>
+                                <li>Page Layout Structure</li>
+                                <li>Accessibility Best Practices</li>
+                                <li>SEO-Friendly Markup</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card">
+                            <div class="module-header">
+                                <span class="module-icon">⚡</span>
+                                <h4>Module 3: Advanced Features</h4>
+                                <span class="module-duration">6 hours</span>
+                            </div>
+                            <p class="module-description">Forms, multimedia, APIs, and modern HTML5 features</p>
+                            <div class="module-lessons">
+                                <span class="lesson-badge">Lessons 11-15</span>
+                                <span class="difficulty advanced">Advanced</span>
+                            </div>
+                            <ul class="module-topics">
+                                <li>HTML Forms and Input Types</li>
+                                <li>Audio and Video Integration</li>
+                                <li>Canvas and SVG Graphics</li>
+                                <li>Web APIs and Storage</li>
+                                <li>Progressive Web App Basics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="course-features">
+                    <h3>What Makes This Course Special</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">💻</div>
+                            <h4>Interactive Learning</h4>
+                            <p>Live code editor with instant preview. Write HTML and see results immediately.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎨</div>
+                            <h4>Real-World Projects</h4>
+                            <p>Build complete websites, portfolios, and interactive applications.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h4>Modern Standards</h4>
+                            <p>Learn HTML5, semantic markup, accessibility, and responsive design principles.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🏆</div>
+                            <h4>Progressive Learning</h4>
+                            <p>Structured curriculum from basic tags to advanced web technologies.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔧</div>
+                            <h4>Best Practices</h4>
+                            <p>Industry standards, clean code, SEO optimization, and performance tips.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📚</div>
+                            <h4>Comprehensive Resources</h4>
+                            <p>References, cheat sheets, exercises, and additional learning materials.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Lessons Tab -->
+            <div id="lessons" class="tab-content">
+                <section class="lessons-section">
+                    <h3>Complete HTML Curriculum</h3>
+                    <p class="section-description">15 comprehensive lessons covering everything from HTML basics to advanced features</p>
+                    
+                    <div class="lessons-grid">
+                        <!-- Module 1: Foundations -->
+                        <div class="lesson-card foundation">
+                            <div class="lesson-number">01</div>
+                            <div class="lesson-content">
+                                <h4>Introduction to HTML</h4>
+                                <p>What is HTML, web browsers, and your first webpage</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 30 min</span>
+                                    <span class="difficulty beginner">Beginner</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson01.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson01.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card foundation">
+                            <div class="lesson-number">02</div>
+                            <div class="lesson-content">
+                                <h4>HTML Document Structure</h4>
+                                <p>DOCTYPE, html, head, body, and basic document anatomy</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 45 min</span>
+                                    <span class="difficulty beginner">Beginner</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson02.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson02.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card foundation">
+                            <div class="lesson-number">03</div>
+                            <div class="lesson-content">
+                                <h4>Text Elements & Formatting</h4>
+                                <p>Headings, paragraphs, emphasis, and text formatting tags</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 50 min</span>
+                                    <span class="difficulty beginner">Beginner</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson03.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson03.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card foundation">
+                            <div class="lesson-number">04</div>
+                            <div class="lesson-content">
+                                <h4>Links & Navigation</h4>
+                                <p>Anchor tags, internal/external links, and navigation menus</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 40 min</span>
+                                    <span class="difficulty beginner">Beginner</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson04.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson04.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card foundation">
+                            <div class="lesson-number">05</div>
+                            <div class="lesson-content">
+                                <h4>Images & Media Basics</h4>
+                                <p>Image tags, attributes, alt text, and responsive images</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 55 min</span>
+                                    <span class="difficulty beginner">Beginner</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson05.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson05.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 2: Structure & Semantics -->
+                        <div class="lesson-card semantic">
+                            <div class="lesson-number">06</div>
+                            <div class="lesson-content">
+                                <h4>Lists & Organization</h4>
+                                <p>Ordered, unordered, and description lists with nesting</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 45 min</span>
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson06.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson06.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card semantic">
+                            <div class="lesson-number">07</div>
+                            <div class="lesson-content">
+                                <h4>Tables & Data Display</h4>
+                                <p>Table structure, headers, captions, and complex tables</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 60 min</span>
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson07.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson07.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card semantic">
+                            <div class="lesson-number">08</div>
+                            <div class="lesson-content">
+                                <h4>Semantic HTML5 Elements</h4>
+                                <p>Header, nav, main, section, article, aside, footer</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 70 min</span>
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson08.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson08.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card semantic">
+                            <div class="lesson-number">09</div>
+                            <div class="lesson-content">
+                                <h4>Page Layout & Structure</h4>
+                                <p>Building complete page layouts with semantic elements</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 65 min</span>
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson09.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson09.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card semantic">
+                            <div class="lesson-number">10</div>
+                            <div class="lesson-content">
+                                <h4>Accessibility & SEO</h4>
+                                <p>ARIA attributes, screen readers, and search optimization</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 55 min</span>
+                                    <span class="difficulty intermediate">Intermediate</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson10.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson10.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 3: Advanced Features -->
+                        <div class="lesson-card advanced">
+                            <div class="lesson-number">11</div>
+                            <div class="lesson-content">
+                                <h4>HTML Forms Basics</h4>
+                                <p>Form structure, input types, labels, and validation</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 80 min</span>
+                                    <span class="difficulty advanced">Advanced</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson11.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson11.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card advanced">
+                            <div class="lesson-number">12</div>
+                            <div class="lesson-content">
+                                <h4>Advanced Form Elements</h4>
+                                <p>Complex inputs, fieldsets, datalists, and form styling</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 75 min</span>
+                                    <span class="difficulty advanced">Advanced</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson12.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson12.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card advanced">
+                            <div class="lesson-number">13</div>
+                            <div class="lesson-content">
+                                <h4>Multimedia Integration</h4>
+                                <p>Audio, video, embedding, and media accessibility</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 70 min</span>
+                                    <span class="difficulty advanced">Advanced</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson13.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson13.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card advanced">
+                            <div class="lesson-number">14</div>
+                            <div class="lesson-content">
+                                <h4>Canvas & SVG Graphics</h4>
+                                <p>Drawing graphics, animations, and interactive visuals</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 85 min</span>
+                                    <span class="difficulty advanced">Advanced</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson14.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson14.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-card advanced">
+                            <div class="lesson-number">15</div>
+                            <div class="lesson-content">
+                                <h4>Modern HTML5 APIs</h4>
+                                <p>Local storage, geolocation, web workers, and PWA basics</p>
+                                <div class="lesson-meta">
+                                    <span class="duration">⏱️ 90 min</span>
+                                    <span class="difficulty advanced">Advanced</span>
+                                </div>
+                                <div class="lesson-actions">
+                                    <a href="lessons/lesson15.html" class="btn btn-primary btn-sm">Study</a>
+                                    <a href="examples/lesson15.html" class="btn btn-outline btn-sm">Practice</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Projects Tab -->
+            <div id="projects" class="tab-content">
+                <section class="projects-section">
+                    <h3>Hands-on Projects</h3>
+                    <p class="section-description">Apply your HTML knowledge with real-world projects</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-preview">
+                                    <span class="project-icon">📄</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Personal Resume/CV</h4>
+                                <p>Create a professional HTML resume with semantic structure, contact information, and clean formatting.</p>
+                                <div class="project-skills">
+                                    <span class="skill-tag">HTML Structure</span>
+                                    <span class="skill-tag">Text Formatting</span>
+                                    <span class="skill-tag">Lists</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="projects/resume.html" class="btn btn-primary btn-sm">Start Project</a>
+                                    <a href="projects/resume-demo.html" class="btn btn-outline btn-sm">View Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-preview">
+                                    <span class="project-icon">🏪</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Local Business Website</h4>
+                                <p>Build a complete business website with navigation, services, contact forms, and location information.</p>
+                                <div class="project-skills">
+                                    <span class="skill-tag">Semantic HTML</span>
+                                    <span class="skill-tag">Navigation</span>
+                                    <span class="skill-tag">Forms</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="projects/business.html" class="btn btn-primary btn-sm">Start Project</a>
+                                    <a href="projects/business-demo.html" class="btn btn-outline btn-sm">View Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-preview">
+                                    <span class="project-icon">📰</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>News Article Website</h4>
+                                <p>Create a news/blog site with articles, categories, comments section, and multimedia content.</p>
+                                <div class="project-skills">
+                                    <span class="skill-tag">Article Structure</span>
+                                    <span class="skill-tag">Media</span>
+                                    <span class="skill-tag">SEO</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="projects/news.html" class="btn btn-primary btn-sm">Start Project</a>
+                                    <a href="projects/news-demo.html" class="btn btn-outline btn-sm">View Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-preview">
+                                    <span class="project-icon">🍕</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Restaurant Menu</h4>
+                                <p>Design an interactive restaurant menu with categories, prices, descriptions, and ordering system.</p>
+                                <div class="project-skills">
+                                    <span class="skill-tag">Tables</span>
+                                    <span class="skill-tag">Images</span>
+                                    <span class="skill-tag">Interactive Forms</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="projects/restaurant.html" class="btn btn-primary btn-sm">Start Project</a>
+                                    <a href="projects/restaurant-demo.html" class="btn btn-outline btn-sm">View Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-preview">
+                                    <span class="project-icon">🎨</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Art Portfolio Gallery</h4>
+                                <p>Showcase artwork with image galleries, artist bio, exhibition history, and contact forms.</p>
+                                <div class="project-skills">
+                                    <span class="skill-tag">Image Gallery</span>
+                                    <span class="skill-tag">Media</span>
+                                    <span class="skill-tag">Accessibility</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="projects/portfolio.html" class="btn btn-primary btn-sm">Start Project</a>
+                                    <a href="projects/portfolio-demo.html" class="btn btn-outline btn-sm">View Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="project-preview">
+                                    <span class="project-icon">🎵</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Music Player Interface</h4>
+                                <p>Build an HTML5 audio player with playlists, controls, and multimedia integration.</p>
+                                <div class="project-skills">
+                                    <span class="skill-tag">Audio/Video</span>
+                                    <span class="skill-tag">Controls</span>
+                                    <span class="skill-tag">APIs</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="projects/music.html" class="btn btn-primary btn-sm">Start Project</a>
+                                    <a href="projects/music-demo.html" class="btn btn-outline btn-sm">View Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Resources Tab -->
+            <div id="resources" class="tab-content">
+                <section class="resources-section">
+                    <h3>Learning Resources</h3>
+                    <div class="resources-grid">
+                        <div class="resource-category">
+                            <h4>📖 Study Materials</h4>
+                            <div class="resource-links">
+                                <a href="resources/html-reference.html" class="resource-link">
+                                    <span class="link-title">HTML Elements Reference</span>
+                                    <span class="link-description">Complete guide to all HTML elements</span>
+                                </a>
+                                <a href="resources/cheat-sheet.html" class="resource-link">
+                                    <span class="link-title">HTML Cheat Sheet</span>
+                                    <span class="link-description">Quick reference for common tags</span>
+                                </a>
+                                <a href="resources/best-practices.html" class="resource-link">
+                                    <span class="link-title">Best Practices Guide</span>
+                                    <span class="link-description">Industry standards and conventions</span>
+                                </a>
+                                <a href="resources/accessibility.html" class="resource-link">
+                                    <span class="link-title">Accessibility Guidelines</span>
+                                    <span class="link-description">Making web content accessible</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <h4>🛠️ Tools & Utilities</h4>
+                            <div class="resource-links">
+                                <a href="examples/playground.html" class="resource-link">
+                                    <span class="link-title">HTML Playground</span>
+                                    <span class="link-description">Live HTML editor and preview</span>
+                                </a>
+                                <a href="resources/validator.html" class="resource-link">
+                                    <span class="link-title">HTML Validator</span>
+                                    <span class="link-description">Check your HTML for errors</span>
+                                </a>
+                                <a href="resources/generator.html" class="resource-link">
+                                    <span class="link-title">Code Generator</span>
+                                    <span class="link-description">Generate HTML templates</span>
+                                </a>
+                                <a href="resources/color-picker.html" class="resource-link">
+                                    <span class="link-title">Color Tools</span>
+                                    <span class="link-description">Color pickers and palettes</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <h4>🎯 Practice & Assessment</h4>
+                            <div class="resource-links">
+                                <a href="resources/exercises.html" class="resource-link">
+                                    <span class="link-title">Interactive Exercises</span>
+                                    <span class="link-description">Hands-on coding challenges</span>
+                                </a>
+                                <a href="resources/quiz.html" class="resource-link">
+                                    <span class="link-title">Knowledge Quiz</span>
+                                    <span class="link-description">Test your HTML understanding</span>
+                                </a>
+                                <a href="resources/assignments.html" class="resource-link">
+                                    <span class="link-title">Class Assignments</span>
+                                    <span class="link-description">Homework and projects</span>
+                                </a>
+                                <a href="resources/portfolio-builder.html" class="resource-link">
+                                    <span class="link-title">Portfolio Builder</span>
+                                    <span class="link-description">Create your showcase website</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <h4>🌐 External Resources</h4>
+                            <div class="resource-links">
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="resource-link external" target="_blank">
+                                    <span class="link-title">MDN HTML Documentation</span>
+                                    <span class="link-description">Official HTML documentation</span>
+                                </a>
+                                <a href="https://html.spec.whatwg.org/" class="resource-link external" target="_blank">
+                                    <span class="link-title">HTML Living Standard</span>
+                                    <span class="link-description">Latest HTML specification</span>
+                                </a>
+                                <a href="https://validator.w3.org/" class="resource-link external" target="_blank">
+                                    <span class="link-title">W3C Markup Validator</span>
+                                    <span class="link-description">Official HTML validator</span>
+                                </a>
+                                <a href="https://caniuse.com/" class="resource-link external" target="_blank">
+                                    <span class="link-title">Can I Use</span>
+                                    <span class="link-description">Browser support tables</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HTML Mastery Course</h4>
+                    <p>Professional HTML education for Class XI students. Learn modern web development with hands-on practice.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#lessons">All Lessons</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="examples/playground.html">HTML Editor</a></li>
+                        <li><a href="resources/reference.html">Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Course Progress</h4>
+                    <div class="footer-progress">
+                        <div class="mini-progress-bar">
+                            <div class="mini-progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-label">0/15 Lessons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HTML Mastery Course - Class XI Professional Education</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
