@@ -115,22 +115,20 @@ By completing this course, students will:
 - Apply modern HTML best practices and standards
 - Build complete websites from scratch
 
-### 🔧 For Educators
+## 👨‍💻 Course Developer & Credits
 
-This course is designed for:
-- **Class XI Computer Science** curriculum
-- **Self-paced learning** with progress tracking
-- **Interactive teaching** with live code examples
-- **Assessment ready** with built-in exercises
-- **Customizable content** for different learning speeds
+**Powered by:** Puran Bahadur Thapa  
+**Website:** https://eastlinknet.np  
+**WhatsApp:** +9779801901140  
 
-### 📞 Support
+*For technical support, web development consulting, or custom PHP training programs, feel free to reach out through the contact information above. Professional development services and advanced training modules available.*
 
-For questions or issues:
-- Review the lesson content and examples
-- Check the Resources section for additional help
-- Use the interactive code editor to experiment
-- Practice with the included projects
+---
+
+**Course Version:** 1.0.0  
+**Last Updated:** October 2025  
+**Developed by:** Puran Bahadur Thapa  
+**Maintained by:** Computer Science Department  
 
 ### 📜 License
 
@@ -138,6 +136,8 @@ This educational content is created for Class XI students and educational use.
 
 ---
 
+
 **Happy Learning! 🚀**
+
 
 Start your HTML journey today and build the foundation for web development mastery.
