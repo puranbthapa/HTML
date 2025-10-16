@@ -118,7 +118,7 @@ By completing this course, students will:
 ## 👨‍💻 Course Developer & Credits
 
 **Powered by:** Puran Bahadur Thapa  
-**Website:** https://eastlinknet.np  
+**Website:** https://eastlink.com.np  
 **WhatsApp:** +9779801901140  
 
 *For technical support, web development consulting, or custom PHP training programs, feel free to reach out through the contact information above. Professional development services and advanced training modules available.*
@@ -141,3 +141,4 @@ This educational content is created for Class XI students and educational use.
 
 
 Start your HTML journey today and build the foundation for web development mastery.
+
